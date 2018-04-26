@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './assets/logo.png';
 import music from './assets/guitar.mp3';
+import Song from './Song'
 import './styles.css';
 
 class App extends Component {
@@ -14,9 +15,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <audio controls>
-          <source src={music} type="audio/mpeg" />
-        </audio>
+        // url = route to be handled by back-end
+        <Song url="http://localhost:4200/get/song" pollInterval={2000} />
       </div>
     );
   }

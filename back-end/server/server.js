@@ -1,17 +1,17 @@
 require('./config/config');
 
 var _ = require('lodash');
-var express = require('express'); 
+var express = require('express'); // needed for routing
 var app = express();
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var Comment = require('./models/comments');
-var commentRoutes = require("./routes/comments");
+var bodyParser = require('body-parser'); 
+var commentRoutes = require("./routes/comments"); // all routes relating to comments
+var songRoutes = require("./routes/songs"); // all routes relating to songs
 var port = process.env.PORT;
-var cors = require('cors');
+var cors = require('cors'); // middleware
 
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://cmps115:lofiai@ds153869.mlab.com:53869/lofiai')
+mongoose.connect('mongodb://cmps115:lofiai@ds153869.mlab.com:53869/lofiai') // establishing connection to database
 	.then(() => {
 		console.log('Start');
 	})
@@ -20,7 +20,7 @@ mongoose.connect('mongodb://cmps115:lofiai@ds153869.mlab.com:53869/lofiai')
 		process.exit(1);
 	});
 
-app.use(cors());
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -30,10 +30,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(commentRoutes);
+app.use(commentRoutes); 
+app.use(songRoutes);
 
 // GET /hello
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send("Hello, World!");
 })
 
