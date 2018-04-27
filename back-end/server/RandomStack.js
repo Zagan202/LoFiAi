@@ -1,6 +1,9 @@
 //a set up for random song selection
 //everything subject to change
 
+// Setup path to access ./routes/song.js
+require("./routes/songs");
+
 //class to queue random songs from the database
 class RandomStack{
   constructor(){
@@ -22,3 +25,6 @@ class RandomStack{
     return(this.ar.pop);
   }
 }
+
+// Allows other files to use the class
+module.exports = RandomStack;
