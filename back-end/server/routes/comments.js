@@ -11,8 +11,6 @@ router.route("/add/comment")
 				res.status(400).send(err);
 			// responds with a json object of our database comments.
 			res.status(200).send(comments);
-		}).catch((e) => {
-    		res.status(400).send({message: e.message});
 		});
 	})
 	// adds a new comment to the database 
@@ -24,8 +22,6 @@ router.route("/add/comment")
 			if(err)
 				res.status(400).send(err);
 			res.status(200).send({ message: "Comment successfully added!" });
-		}).catch((e) => {
-    		res.status(400).send({message: e.message});
 		});
 	});
 

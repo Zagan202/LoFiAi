@@ -20,8 +20,6 @@ router.route("/get/song")
 			// 400 if there is an error
 			// responds with a json object of our database songs.
 			res.status(200).send(songs); // 4) <--- Send the list of random songs
-		}).catch((e) => { // Catch error if can't find songs
-    		res.status(400).send({message: e.message});
 		});
 	})
 
@@ -33,8 +31,6 @@ router.route("/get/song")
 			if(err)
 				res.status(400).send(err);
 			res.status(200).send({ message: "Song successfully added!" });
-		}).catch((e) => {
-    		res.status(400).send({message: e.message});
 		});
 	});
 
