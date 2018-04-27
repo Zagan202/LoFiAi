@@ -1,19 +1,19 @@
 var express = require("express");
 var router = express.Router();
-var Comment = require("../models/comments");
+var Comment = require("../models/comments"); // comment model
 
 router.route("/add/comment")
-	//retrieve all comments from the database
+	// retrieve all comments from the database
 	.get(function(req, res) {
-		//looks at our Comment Schema
+		// looks at our Comment Schema
 		Comment.find(function(err, comments) {
 		if (err)
 		res.send(err);
-		//responds with a json object of our database comments.
+		// responds with a json object of our database comments.
 		res.json(comments);
 		});
 	})
-
+	// adds a new comment to the database 
 	.post(function(req, res) {
 		var comment = new Comment();
 		comment.author = req.body.author;
