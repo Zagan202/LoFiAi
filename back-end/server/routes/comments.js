@@ -7,10 +7,12 @@ router.route("/add/comment")
 	.get(function(req, res) {
 		// looks at our Comment Schema
 		Comment.find(function(err, comments) {
-		if (err)
-		res.send(err);
-		// responds with a json object of our database comments.
-		res.json(comments);
+			if (err)
+				res.status(400).send(err);
+			// responds with a json object of our database comments.
+			res.status(200).send(comments);
+		}).catch((e) => {
+    		res.status(400).send({message: e.message});
 		});
 	})
 	// adds a new comment to the database 
@@ -20,8 +22,10 @@ router.route("/add/comment")
 		comment.text = req.body.text;
 		comment.save(function(err) {
 			if(err)
-				res.send(err);
-			res.json({ message: "Comment successfully added!" });
+				res.status(400).send(err);
+			res.status(200).send({ message: "Comment successfully added!" });
+		}).catch((e) => {
+    		res.status(400).send({message: e.message});
 		});
 	});
 
