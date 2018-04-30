@@ -15,7 +15,6 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        // url = route to be handled by back-end
         <Song url="http://localhost:4200/get/song" pollInterval={2000} />
       </div>
     );

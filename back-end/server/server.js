@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 app.use(commentRoutes); 
 app.use(songRoutes);
 
-// GET /hello
+// GET /
 app.get('/', (req, res) => {
     res.status(200).send("Hello, World!");
 })
