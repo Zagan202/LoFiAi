@@ -27,7 +27,7 @@ class Song extends Component {
       console.log(song.path);
       return (
           <audio controls key={ song['_id'] }>
-            <source src={song.path} type="audio/mpeg" />
+            <source src={require(`${song.path}`)} type="audio/mpeg" />
           </audio>
       )      
     })

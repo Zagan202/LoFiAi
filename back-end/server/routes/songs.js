@@ -14,7 +14,7 @@ router.route("/get/song")
 			// Set response status to 200 if successful
 			// 400 if there is an error
 			// responds with a json object of the song path at randomIndex.
-			res.status(200).send(songs[randomIndex]);
+			res.status(200).send(songs);
 		});
 	})
 
