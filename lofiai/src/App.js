@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './assets/logo.png';
-import music from './assets/guitar.mp3';
 import Song from './Song'
 import './styles.css';
 
