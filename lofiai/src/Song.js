@@ -4,7 +4,7 @@ import axios from 'axios'; // used for connection to database from front end
 import './styles.css';
 
 class Song extends Component {
-  // initialize
+  // Initialize
   constructor(props){
     super(props);
     this.state = {data: [], index: 0};
