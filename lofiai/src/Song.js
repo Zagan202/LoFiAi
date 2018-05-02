@@ -17,7 +17,6 @@ class Song extends Component {
   loadSongsFromServer(){
     axios.get(this.props.url)
     .then(res => {
-      //console.log(res);
       this.setState({data: res.data});
     })
   }
@@ -28,6 +27,7 @@ class Song extends Component {
     this.setState({index: Math.floor(Math.random() * numTracks)});
   }
 
+  // Loads songs before first render
   componentWillMount(){
     this.loadSongsFromServer();
   }
@@ -40,9 +40,8 @@ class Song extends Component {
     playerElement.play();
   }
 
+  // Renders the audio player
   render() {
-    // Audio player
-    console.log(this.state.index);
     if(this.state.data.length > 0){
       return (
         <div>

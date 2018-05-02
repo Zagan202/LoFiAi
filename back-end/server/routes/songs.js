@@ -8,12 +8,10 @@ router.route("/get/song")
     Song.find(function(err, songs) {
       if (err)
         res.send(err);
-      //console.log(songs);
-	  //var  randomIndex = Math.floor(Math.random() * songs.length);
 	  
       // Set response status to 200 if successful
-      // 400 if there is an error
-      // responds with a json object of the song path at randomIndex.
+	  // 400 if there is an error
+	  // Sends array of all songs
       res.status(200).send(songs);
     });
   })
