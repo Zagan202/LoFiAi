@@ -13,7 +13,7 @@ class Song extends Component {
     this.shuffle = this.shuffle.bind(this);
   }
 
-  // fetches all song data from database and sets state to the response.
+  // Fetches all song data from database and sets state to the response.
   loadSongsFromServer(){
     axios.get(this.props.url)
     .then(res => {
