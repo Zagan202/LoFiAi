@@ -7,14 +7,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+      <div className = "top">LoFiAi (Top Navigation?)</div>
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to LoFiAi</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className = "mid">
         <Song url="http://localhost:4200/get/song" pollInterval={2000} />
+      </div>
+      <div className = "about">Whale whale whale</div>
       </div>
     );
   }
