@@ -10,7 +10,7 @@ class App extends Component {
       <div className = "top">LoFiAi (Top Navigation?)</div>
           <img src={logo} className="App-logo" alt="logo" />
       <div className = "mid">
-        <Song url="http://localhost:4200/get/song" pollInterval={2000} />
+        <Song url="http://localhost:4200/get/song"/>
       </div>
       <div className = "about">Whale whale whale</div>
       </div>
