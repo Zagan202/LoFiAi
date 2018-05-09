@@ -1,9 +1,9 @@
+// Inspired by Corey Haggards "Screeners"
+// https://dribbble.com/shots/4138489-Screeners
 
 import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring'
 import './styles.css'
-import logo from './assets/logo.png';
-import Song from './Song'
 
 const Page = ({ offset, caption, first, second, gradient, onClick }) => (
   <React.Fragment>
@@ -37,7 +37,7 @@ export default class extends React.Component {
       <div
         style={{
           gridColumn: 'span 2',
-          gridRow: 'span 3',
+          gridRow: 'span 2',
           background: '#dfdfdf',
         }}>
         <Parallax
@@ -45,29 +45,29 @@ export default class extends React.Component {
           ref={node => (this.parallax = node)}
           pages={3}
           horizontal
-          scrolling={true}>
+          scrolling={false}>
           <Page
             offset={0}
             gradient="pink"
-            caption="Welcome to"
-            first="LoFiAi"
-            //second="dolor sit"
+            caption="who we are"
+            first="Lorem ipsum"
+            second="dolor sit"
             onClick={() => this.scroll(1)}
           />
           <Page
             offset={1}
             gradient="teal"
             caption="what we do"
-            first="AI Driven Music Composition"
-            second="W/ TensorFlow ver. of Google WaveNet"
+            first="consectetur"
+            second="adipiscing elit"
             onClick={() => this.scroll(2)}
           />
           <Page
             offset={2}
             gradient="tomato"
-            caption="TL;DR:"
-            first="Using AI trained on Google's computers"
-            second="to compose new music."
+            caption="what we want"
+            first="Morbi quis"
+            second="est dignissim"
             onClick={() => this.scroll(0)}
           />
         </Parallax>
@@ -75,16 +75,3 @@ export default class extends React.Component {
     )
   }
 }
-/*
-class App extends Component {
-  render() {
-    return (
-      <div className = "mid">
-        <Song url="http://localhost:4200/get/song" pollInterval={2000} />
-      </div>
-    );
-  }
-}
-/*
-export default App;
-*/
