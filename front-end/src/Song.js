@@ -9,17 +9,45 @@ class Song extends Component {
     super(props);
     // data: array of all song paths
     // first: initial song to play
-    this.state = {data: [], first: 0};
+    this.state = {data: [], first: null};
     this.playNext = this.playNext.bind(this);
   }
 
-  // Initialize data and first before audio player renders
+  // Returns song index from URL (?first=_#) or -1 if none exists
+  getUrlParam(){
+    var url = window.location.href;
+    url = url.split('?')[1];
+    if(url){
+      url = url.split('#')[0];
+      if(url){
+        url = url.split('=')[1];
+        if(url){
+          return(parseInt(url, 10));
+        }
+      }
+    }
+    return(-1);
+  }
+
+  // Set data and first before audio player renders
   componentWillMount(){
-    axios.get(this.props.url)
-    .then(res => {
-      this.setState({data: res.data,
-                     first: Math.floor(Math.random() * res.data.length)});
-    })
+    var urlFirst = this.getUrlParam();
+    // Get songs from the database
+    // Then assign those songs to State.data
+    // And set first to random, or urlFirst if possible
+      axios.get(this.props.url)
+      .then( res => {
+        if(urlFirst < 0 || urlFirst > (res.data.length - 1)){
+          // Variable for random first set here for transfer to App.js
+          var randomFirst = Math.floor(Math.random() * res.data.length);
+          this.props.callback(randomFirst);
+          this.setState({data: res.data, first: randomFirst});
+        }else{
+          this.props.callback(urlFirst);
+          this.setState({data: res.data, first: urlFirst});
+        }
+      })
+      
   }
   
   // Randomly select next song path and play it
@@ -28,6 +56,7 @@ class Song extends Component {
     playerElement.currentTime = 0;
     var numTracks = this.state.data.length;
     var index = (Math.floor(Math.random() * numTracks));
+    this.props.callback(index);
     playerElement.src = this.state.data[index].path;
     playerElement.play();
   }
