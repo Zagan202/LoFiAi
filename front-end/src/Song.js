@@ -40,10 +40,12 @@ class Song extends Component {
         if(urlFirst < 0 || urlFirst > (res.data.length - 1)){
           // Variable for random first set here for transfer to App.js
           var randomFirst = Math.floor(Math.random() * res.data.length);
-          this.props.callback(randomFirst);
+          this.props.indexCallback(randomFirst);
+          this.props.pathCallback(res.data[randomFirst].path);
           this.setState({data: res.data, first: randomFirst});
         }else{
-          this.props.callback(urlFirst);
+          this.props.indexCallback(urlFirst);
+          this.props.pathCallback(res.data[urlFirst].path)
           this.setState({data: res.data, first: urlFirst});
         }
       })
@@ -56,7 +58,8 @@ class Song extends Component {
     playerElement.currentTime = 0;
     var numTracks = this.state.data.length;
     var index = (Math.floor(Math.random() * numTracks));
-    this.props.callback(index);
+    this.props.indexCallback(index);
+    this.props.pathCallback(this.state.data[index].path);
     playerElement.src = this.state.data[index].path;
     playerElement.play();
   }
