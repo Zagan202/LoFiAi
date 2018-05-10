@@ -45,7 +45,7 @@ class Song extends Component {
           this.setState({data: res.data, first: randomFirst});
         }else{
           this.props.indexCallback(urlFirst);
-          this.props.pathCallback(res.data[urlFirst].path)
+          this.props.pathCallback(res.data[urlFirst].path);
           this.setState({data: res.data, first: urlFirst});
         }
       })
