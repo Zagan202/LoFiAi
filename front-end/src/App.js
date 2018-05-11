@@ -20,7 +20,6 @@ class App extends Component {
 
   //Function called by Song to store its file paths in App's state
   updateSongPath(SongPath){
-    console.log("path = " + SongPath);
     this.setState({path: SongPath});
   }
   
@@ -30,7 +29,6 @@ class App extends Component {
     // Checks if navbar is offset enough to stick to the top
     function checkSticky(e){
       var navbarElement = document.getElementById("nav");
-      console.log(navbarElement);
       var stickHeight = navbarElement.offsetTop;
       if (window.pageYOffset >= stickHeight) {
         navbarElement.classList.add("sticky")
