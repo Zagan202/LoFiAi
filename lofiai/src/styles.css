@@ -78,6 +78,16 @@ body {
   font-family: alexisMarie;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
 .mid {
   display: block;
   padding: 200px 0px;
