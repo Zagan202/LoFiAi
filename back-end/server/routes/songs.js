@@ -4,7 +4,7 @@ var Song = require("../models/songs"); // comment model
 
 router.route("/get/song")
   .get(function(req, res) {
-    // looks at our Songs Schema
+    // Looks at our Songs Schema
     Song.find(function(err, songs) {
       if (err)
         res.send(err);

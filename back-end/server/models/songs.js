@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var SongsSchema = new Schema ({
-	path: String,
+  path: String,
 });
 
 module.exports = mongoose.model('Song', SongsSchema);
