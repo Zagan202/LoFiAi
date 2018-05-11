@@ -3,6 +3,8 @@ import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring'
 import './styles.css'
 import logo from './assets/logo.png';
+import study from './assets/study.jpg';
+import welcome from './assets/welcome.jpg'
 import Song from './Song'
 
 const url = (name, wrap = false) =>
@@ -57,33 +59,33 @@ export default class ScrollExample extends React.Component {
           />
 
           <ParallaxLayer
-            offset={1.3}
-            speed={-0.3}
+            offset={0}
+            speed={1}
             style={{ pointerEvents: 'none' }}>
             <img
-              src={url('satellite4')}
-              style={{ width: '15%', marginLeft: '70%' }}
+              src={welcome}
+              style={{ display: 'block', width: '20%', marginLeft: '0%', float:'left',padding:'20% 0% 0% 0%' }}
             />
           </ParallaxLayer>
 
           <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
             <img
-              src={url('cloud')}
+              src={logo}
               style={{ display: 'block', width: '20%', marginLeft: '55%' }}
             />
             <img
-              src={url('cloud')}
+              src={logo}
               style={{ display: 'block', width: '10%', marginLeft: '15%' }}
             />
           </ParallaxLayer>
 
           <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
             <img
-              src={url('cloud')}
+              src={logo}
               style={{ display: 'block', width: '20%', marginLeft: '70%' }}
             />
             <img
-              src={url('cloud')}
+              src={logo}
               style={{ display: 'block', width: '20%', marginLeft: '40%' }}
             />
           </ParallaxLayer>
@@ -143,34 +145,42 @@ export default class ScrollExample extends React.Component {
             style={{
               backgroundSize: '80%',
               backgroundPosition: 'center',
-              backgroundImage: url('clients', true),
             }}
           />
 
           <ParallaxLayer
-            offset={0}
-            speed={0.1}
-            onClick={() => this.parallax.scrollTo(1)}
+            offset={1}
+            speed={0.5}
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <img src={url('server')} style={{ width: '20%' }} />
+            {/*This is inception*/}
+            <ParallaxLayer
+            offset={0}
+            speed={0.1}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <img
+              src={study}
+              style={{ display: 'block', width: '50%' }}
+            />
+            </ParallaxLayer>
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={1}
             speed={0.1}
-            onClick={() => this.parallax.scrollTo(2)}
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <img src={url('bash')} style={{ width: '40%' }} />
           </ParallaxLayer>
-
           <ParallaxLayer
             offset={2}
             speed={-0}
@@ -179,8 +189,7 @@ export default class ScrollExample extends React.Component {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            onClick={() => this.parallax.scrollTo(0)}>
-            <img src={url('clients-main')} style={{ width: '40%' }} />
+            >
           </ParallaxLayer>
         </Parallax>
       </div>
