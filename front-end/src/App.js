@@ -24,19 +24,41 @@ class App extends Component {
     this.setState({path: SongPath});
   }
   
+  // Triggers after first render
+  componentDidMount(){
+    window.onscroll = function() {checkSticky()};
+    // Checks if navbar is offset enough to stick to the top
+    function checkSticky(e){
+      var navbarElement = document.getElementById("nav");
+      console.log(navbarElement);
+      var stickHeight = navbarElement.offsetTop;
+      if (window.pageYOffset >= stickHeight) {
+        navbarElement.classList.add("sticky")
+      } else {
+        navbarElement.classList.remove("sticky");
+      }
+    }
+  }
+  
   render() {
     return (
       <div className="App">
-        <div className = "top">LoFiAi (Top Navigation?)</div>
-          <img src={logo} className="App-logo" alt="logo"/>
-        <div className = "mid">
+        <img id = "logo" src={logo} className="App-logo" alt="logo" />
+        <div id = "nav" className = "navbar">
+          <a className = "active" href = "#logo">Home</a>
+          <a href = "#mid" >Player</a>
+          <a href = "#about">About</a>
+        </div>
+        <div id="mid" className = "mid">
           <Song url="http://localhost:4200/get/song" 
                 indexCallback={this.updateSongIndex}
                 pathCallback={this.updateSongPath}/>
           <Share index={this.state.index}/>
           <Save path={this.state.path}/>
         </div>
-        <div className = "about">Whale whale whale</div>
+        <div id="about" className = "about">
+          Whale whale whale
+        </div>
       </div>
     );
   }
