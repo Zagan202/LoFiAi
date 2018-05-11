@@ -21,7 +21,7 @@ class Share extends Component{
   render(){
     return(
       <div>
-        <button onClick={this.press}/>
+        <button onClick={this.press}>Share</button>
       </div>
     )
   }
