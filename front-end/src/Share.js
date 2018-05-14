@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import twIcon from "./assets/twIcon.png";
+import fbIcon from "./assets/fbIcon.png";
 import './styles.css';
 // Share button(s) Component
 
@@ -62,8 +64,8 @@ class Share extends Component{
       <div>
         <div>
           <button onClick={this.copyLink}>Copy Link To Clipboard</button>
-          <button onClick={this.tweet}>Twitter</button>
-          <button onClick={this.face}>Facebook</button>
+          <input type="image" onClick={this.tweet} src={twIcon} height="5%" width="5%"></input>
+          <input type="image" onClick={this.face} src={fbIcon} height="5%" width="5%"></input>
         </div>
         <div id="linkdiv">
         </div>
