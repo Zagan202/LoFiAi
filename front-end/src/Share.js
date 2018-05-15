@@ -63,15 +63,18 @@ class Share extends Component{
     return(
       <div>
         <div>
-          <button onClick={this.copyLink}>Copy Link To Clipboard</button>
           <input type="image" onClick={this.tweet} src={twIcon} 
-            height="5%" width="5%" alt="twitter">
-          </input>
-          <input type="image" onClick={this.face} src={fbIcon} 
-            height="5%" width="5%" alt="facebook">
+            height="50%" width="50%" alt="twitter">
           </input>
         </div>
-        <div id="linkdiv">
+        <div>
+          <input type="image" onClick={this.face} src={fbIcon} 
+            height="50%" width="50%" alt="facebook">
+          </input>
+        </div>
+        <div>
+          <button onClick={this.copyLink}>Copy Link To Clipboard</button>
+          <div id="linkdiv"></div>
         </div>
       </div>
     )

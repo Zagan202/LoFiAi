@@ -4,12 +4,11 @@
 }
 
 .App-logo {
-  padding: 40px;
+  padding: 25%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 10%;
-  height: 10%;
 }
 
 .App-header {
@@ -116,7 +115,7 @@ body {
 }
 
 .text {
-    pointer-events: none;
+    pointer-events: auto;
     justify-content: start!important;
     font-family: 'Kanit', sans-serif;
     line-height: 0px;
