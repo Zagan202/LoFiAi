@@ -1,4 +1,4 @@
-#LoFiAi utilizes React-Springy-Parallax
+# LoFiAi Utilizes React-Springy-Parallax
 [HERE](https://github.com/drcmda/react-springy-parallax)
 ### Below you will find their tutorial on how to get started 
 
