@@ -53,7 +53,7 @@ class Song extends Component {
   }
   
   // Randomly select next song path and play it
-  playNext(e){
+  playNext(){
     var playerElement = document.getElementById("player");
     playerElement.currentTime = 0;
     var numTracks = this.state.data.length;
@@ -64,15 +64,36 @@ class Song extends Component {
     playerElement.play();
   }
 
+  // Plays or pauses audio when the play/pause button is clicked
+  playButton(){
+    var playerElement = document.getElementById("player");
+    if(playerElement.paused === true){
+      playerElement.play();
+    }else{
+      playerElement.pause();
+    }
+  }
+
+  // Changes audio volume based on slider
+  changeVolume(){
+    var playerElement = document.getElementById("player");
+    var volumeElement = document.getElementById("vol");
+    playerElement.volume = (volumeElement.value / 100);
+  }
+
   // Renders the audio player
   render() {
     // Necessary to avoid rendering before song paths have loaded
     if(this.state.data.length > 0){
       return (
         <div>
-         <audio controls id="player" onEnded={this.playNext}>
-           <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
+          <audio id="player" onEnded={this.playNext}>
+            <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
           </audio>
+          <button onClick={this.playButton}>Play/Pause</button>
+          <input id="vol" type="range" min="0" max="100" defaultValue="100"
+            onInput={this.changeVolume}>
+          </input>
         </div>
       )
     }
