@@ -1,11 +1,14 @@
 
-import React from 'react'
-import { Parallax, ParallaxLayer } from 'react-spring'
-import './styles.css'
+import React, { Component } from 'react';
+import { Parallax, ParallaxLayer } from 'react-spring';
+import './styles.css';
 import logo from './assets/logo.png';
-import Song from './Song.js'
-import Share from './Share.js'
-import Save from './Save.js'
+import study from './assets/study.jpg';
+import welcome from './assets/welcome.jpg';
+import Song from './Song.js';
+import Share from './Share.js';
+import Save from './Save.js';
+
 
 const url = (name, wrap = false) =>
   `${
@@ -31,7 +34,7 @@ const Blue = ({ children }) => (
 const Gray = ({ children }) => (
   <span style={{ color: '#909090' }}>{children}</span>
 )
-
+/*
 export default class ScrollExample extends React.Component {
   render() {
     return (
@@ -90,16 +93,7 @@ export default class ScrollExample extends React.Component {
             />
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-            <img
-              src={url('cloud')}
-              style={{ display: 'block', width: '10%', marginLeft: '10%' }}
-            />
-            <img
-              src={url('cloud')}
-              style={{ display: 'block', width: '20%', marginLeft: '75%' }}
-            />
-          </ParallaxLayer>
+
 
           <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
             <img
@@ -156,7 +150,6 @@ export default class ScrollExample extends React.Component {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            {/*This is inception*/}
             <ParallaxLayer
             offset={0}
             speed={0.1}
@@ -195,9 +188,10 @@ export default class ScrollExample extends React.Component {
       </div>
     )
   }
-}
+} 
+*/
 
-/*
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -220,7 +214,7 @@ class App extends Component {
   componentDidMount(){
     window.onscroll = function() {checkSticky()};
     // Checks if navbar is offset enough to stick to the top
-    function checkSticky(e){
+    function checkSticky(){
       var navbarElement = document.getElementById("nav");
       var stickHeight = navbarElement.offsetTop;
       if (window.pageYOffset >= stickHeight) {
@@ -233,27 +227,59 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <img id = "logo" src={logo} className="App-logo" alt="logo" />
-        <div id = "nav" className = "navbar">
-          <a className = "active" href = "#logo">Home</a>
-          <a href = "#mid" >Player</a>
-          <a href = "#about">About</a>
-        </div>
-        <div id="mid" className = "mid">
-          <Song url="http://localhost:4200/get/song"
-                indexCallback={this.updateSongIndex}
-                pathCallback={this.updateSongPath}/>
-          <Share index={this.state.index}/>
-          <Save path={this.state.path}/>
-        </div>
-        <div id="about" className = "about">
-          Whale whale whale
-        </div>
-      </div>
+      <Parallax className="App" ref={ref => (this.parallax = ref)} pages={3}>
+        <ParallaxLayer offset={0} speed={-0.1}>
+          <img src={logo} className= "App-logo" style={{ display: 'block'}}/>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={-1}
+                       style={{display: 'flex', alignItems: 'center',
+                               justifyContent: "flex-end"}}>
+           <Share index={this.state.index}/>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={0}
+                       style={{display: "flex", alignItems: "flex-end",
+                               justifyContent: "flex-start"}}>
+          <img src={welcome} style={{display: "block", width: "25%"}}/>
+        </ParallaxLayer>
+
+        <ParallaxLayer id="mid">
+          <ParallaxLayer offset={1} speed={-0.2} 
+            style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <img src={study}
+              style={{ display: 'block', width: '50%' }}
+            />
+          </ParallaxLayer>
+        
+          <ParallaxLayer offset={1} speed={0.1}
+            style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
+              <Song url="http://localhost:4200/get/song"
+                    indexCallback={this.updateSongIndex}
+                    pathCallback={this.updateSongPath}
+              />
+              <Save path={this.state.path}/>
+          </ParallaxLayer>
+        </ParallaxLayer>
+
+          <ParallaxLayer offset={2} speed={0.8} className = "about">
+            <h1>About Me</h1>
+            <p>Whale whale whale</p>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={0} speed={-1} >
+            <div id = "nav" className = "navbar">
+              <a className = "active" href = "#logo">Home</a>
+              <a href = "#mid" >Player</a>
+              <a href = "#about">About</a>
+            </div>
+          </ParallaxLayer>
+
+      </Parallax>
+      
     );
   }
 }
-/*
+
 export default App;
-*/
+
