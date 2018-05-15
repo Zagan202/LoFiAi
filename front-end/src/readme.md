@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/drcmda/react-spring.svg?branch=master)](https://travis-ci.org/drcmda/react-spring) [![npm version](https://badge.fury.io/js/react-spring.svg)](https://badge.fury.io/js/react-spring)
+#LoFiAi utilizes React-Springy-Parallax
+[HERE](https://github.com/drcmda/react-springy-parallax)
+### Below you will find their tutorial on how to get started 
 
 # Installation 🖥
 
