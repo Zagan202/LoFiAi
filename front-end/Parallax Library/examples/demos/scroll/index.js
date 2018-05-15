@@ -1,12 +1,7 @@
-
 import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring'
-import './styles.css'
-import logo from './assets/logo.png';
-import Song from './Song.js'
-import Share from './Share.js'
-import Save from './Save.js'
 
+// Little helpers ...
 const url = (name, wrap = false) =>
   `${
     wrap ? 'url(' : ''
@@ -59,33 +54,33 @@ export default class ScrollExample extends React.Component {
           />
 
           <ParallaxLayer
-            offset={0}
-            speed={1}
+            offset={1.3}
+            speed={-0.3}
             style={{ pointerEvents: 'none' }}>
             <img
-              src={welcome}
-              style={{ display: 'block', width: '20%', marginLeft: '0%', float:'left',padding:'20% 0% 0% 0%' }}
+              src={url('satellite4')}
+              style={{ width: '15%', marginLeft: '70%' }}
             />
           </ParallaxLayer>
 
           <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
             <img
-              src={logo}
+              src={url('cloud')}
               style={{ display: 'block', width: '20%', marginLeft: '55%' }}
             />
             <img
-              src={logo}
+              src={url('cloud')}
               style={{ display: 'block', width: '10%', marginLeft: '15%' }}
             />
           </ParallaxLayer>
 
           <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
             <img
-              src={logo}
+              src={url('cloud')}
               style={{ display: 'block', width: '20%', marginLeft: '70%' }}
             />
             <img
-              src={logo}
+              src={url('cloud')}
               style={{ display: 'block', width: '20%', marginLeft: '40%' }}
             />
           </ParallaxLayer>
@@ -145,42 +140,34 @@ export default class ScrollExample extends React.Component {
             style={{
               backgroundSize: '80%',
               backgroundPosition: 'center',
+              backgroundImage: url('clients', true),
             }}
           />
 
           <ParallaxLayer
-            offset={1}
-            speed={0.5}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            {/*This is inception*/}
-            <ParallaxLayer
             offset={0}
             speed={0.1}
+            onClick={() => this.parallax.scrollTo(1)}
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <img
-              src={study}
-              style={{ display: 'block', width: '50%' }}
-            />
-            </ParallaxLayer>
+            <img src={url('server')} style={{ width: '20%' }} />
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={1}
             speed={0.1}
+            onClick={() => this.parallax.scrollTo(2)}
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}>
+            <img src={url('bash')} style={{ width: '40%' }} />
           </ParallaxLayer>
+
           <ParallaxLayer
             offset={2}
             speed={-0}
@@ -189,71 +176,11 @@ export default class ScrollExample extends React.Component {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            >
+            onClick={() => this.parallax.scrollTo(0)}>
+            <img src={url('clients-main')} style={{ width: '40%' }} />
           </ParallaxLayer>
         </Parallax>
       </div>
     )
   }
 }
-
-/*
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {index: null, path: null};
-    this.updateSongIndex = this.updateSongIndex.bind(this);
-    this.updateSongPath = this.updateSongPath.bind(this);
-  }
-
-  // Function called by Song to store its index in App's state
-  updateSongIndex(songIndex){
-    this.setState({index: songIndex});
-  }
-
-  //Function called by Song to store its file paths in App's state
-  updateSongPath(SongPath){
-    this.setState({path: SongPath});
-  }
-
-  // Triggers after first render
-  componentDidMount(){
-    window.onscroll = function() {checkSticky()};
-    // Checks if navbar is offset enough to stick to the top
-    function checkSticky(e){
-      var navbarElement = document.getElementById("nav");
-      var stickHeight = navbarElement.offsetTop;
-      if (window.pageYOffset >= stickHeight) {
-        navbarElement.classList.add("sticky")
-      } else {
-        navbarElement.classList.remove("sticky");
-      }
-    }
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <img id = "logo" src={logo} className="App-logo" alt="logo" />
-        <div id = "nav" className = "navbar">
-          <a className = "active" href = "#logo">Home</a>
-          <a href = "#mid" >Player</a>
-          <a href = "#about">About</a>
-        </div>
-        <div id="mid" className = "mid">
-          <Song url="http://localhost:4200/get/song"
-                indexCallback={this.updateSongIndex}
-                pathCallback={this.updateSongPath}/>
-          <Share index={this.state.index}/>
-          <Save path={this.state.path}/>
-        </div>
-        <div id="about" className = "about">
-          Whale whale whale
-        </div>
-      </div>
-    );
-  }
-}
-/*
-export default App;
-*/
