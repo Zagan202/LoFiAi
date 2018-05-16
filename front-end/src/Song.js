@@ -90,11 +90,11 @@ class Song extends Component {
           <audio id="player" onEnded={this.playNext}>
             <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
           </audio>
-          <button onClick={this.playButton}>Play/Pause</button>
-          <input id="vol" type="range" min="0" max="100" defaultValue="100"
-            onInput={this.changeVolume}>
-          </input>
-        </div>
+            <button onClick={this.playButton}>Play/Pause</button>
+            <input id="vol" type="range" min="0" max="100" defaultValue="100"
+              onInput={this.changeVolume}>
+            </input>
+          </div>
       )
     }
     return(<div></div>);
