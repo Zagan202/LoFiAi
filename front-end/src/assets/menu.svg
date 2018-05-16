@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="104px" viewBox="0 0 102 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-HD" transform="translate(-1338.000000, -460.000000)">
+            <g id="Menu" transform="translate(1340.000000, 462.000000)">
+                <path d="M100,100 C97.0152317,100 93.6818983,100 90,100 L10,100 C4.4771525,100 0,95.5228475 0,90 L0,10 C0,4.4771525 4.4771525,0 10,0 L90,0 L100,0" id="Rectangle-3" stroke="#EFEFEF" stroke-width="4" fill="#090F1B"></path>
+                <polygon id="Triangle-2-Copy" fill="#FFFFFF" points="37 50 63 75 63 25"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
