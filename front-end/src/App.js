@@ -81,19 +81,15 @@ class App extends Component {
           style={{display: "flex", alignItems: "flex-end", justifyContent: "flex-end"}}>
           <img src={sleep} alt="" style={{display: "block", width: "50%"}}/>
         </ParallaxLayer>
-        
-        <ParallaxLayer offset={2} speed={0.8} className = "about"
-          style={{display: "flex", alignItems: "flex-end", justifyContent: "flex-end"}}>
-          <h1>About Me</h1>
-        </ParallaxLayer>
 
-        <ParallaxLayer offset={2} speed={0.8} className = "about">
-          <p>Whale whale whale</p>
+        <ParallaxLayer offset={2.1} speed={0.8}
+        style={{display: 'flex', alignContent: "flex-end", padding: "0% 0% 0% 10%"}}>
+          <p className = "about">About...</p>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={-1}>
-          <div id = "nav" className = "sicky">
-            <button className = "navbut" onClick={() => this.parallax.scrollTo(0)}>Home</button>
+          <div id = "nav" className = "navbar">
+            <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
           </div>

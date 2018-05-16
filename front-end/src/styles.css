@@ -26,7 +26,12 @@
 
 @font-face {
   font-family: AlexisMarie;
-  src: url('AlexisMarie.ttf') format('truetype');
+  src: url('./assets/AlexisMarie.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: p5hatty;
+  src: url('./assets/p5hatty.ttf') format('truetype');
 }
 
 body {
@@ -93,18 +98,17 @@ body {
   margin-right: auto;
 
   font-size: 50px;
-  font-family: alexisMarie;
+  font-family: AlexisMarie;
   text-align: center;
 }
 
 .about {
   display: block;
-  padding: 300px 0px;
-  margin-left: auto;
-  margin-right: auto;
+
 
   font-size: 50px;
-  font-family: alexisMarie;
+  font-family: p5hatty;
+  color: #efefef;
   text-align: center;
 }
 
@@ -161,16 +165,4 @@ body {
     width: 170%;
     height: 100%;
     cursor: pointer;
-}
-
-.pink {
-    background: linear-gradient(to right, deeppink 0%, coral 100%);
-}
-
-.teal {
-    background: linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%);
-}
-
-.tomato {
-    background: linear-gradient(to right, tomato 0%, gold 100%);
 }
