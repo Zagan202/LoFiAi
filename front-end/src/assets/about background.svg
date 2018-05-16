@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1024px" viewBox="0 0 1440 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FF9A23;">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>About HD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 1440 0 1440 733 0 1024"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-HD">
+            <g id="Rectangle-6">
+                <use fill="#060816" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#979797" stroke-width="1" d="M0.5,0.5 L0.5,1023.38885 L1439.5,732.590934 L1439.5,0.5 L0.5,0.5 Z"></path>
+            </g>
+            <polygon id="Triangle" fill="#FF9A23" points="1440 732 1440 1024 0 1024"></polygon>
+        </g>
+    </g>
+</svg>

@@ -115,7 +115,7 @@ body {
 }
 
 .text {
-    pointer-events: auto;
+    pointer-events: none;
     justify-content: start!important;
     font-family: 'Kanit', sans-serif;
     line-height: 0px;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import twIcon from "./assets/twIcon.png";
-import fbIcon from "./assets/fbIcon.png";
+import menu from "./assets/menu.svg";
+import twIcon from "./assets/twIcon.svg";
+import fbIcon from "./assets/fbIcon.svg";
 import './styles.css';
 // Share button(s) Component
 
@@ -30,11 +31,16 @@ class Share extends Component{
   // Creates a textbox with the link and copies it to the clipboard
   copyLink(){
     var link = this.getShareLink();
-    var input = document.createElement("input");
     var element = document.getElementById("linkdiv");
-    element.appendChild(input);
-    input.value = link;
-    input.select();
+    if(element.children.length === 0){
+      var input = document.createElement("input");
+      element.appendChild(input);
+      input.value = link;
+      input.select();
+    }else{
+      element.children[0].value = link;
+      element.children[0].select();
+    }
     document.execCommand("Copy");
   }
 
@@ -68,9 +74,9 @@ class Share extends Component{
           </input>
         </div>
         <div>
-          <input type="image" onClick={this.face} src={fbIcon} 
+          <img onClick={this.face} src={fbIcon} 
             height="50%" width="50%" alt="facebook">
-          </input>
+          </img>
         </div>
         <div>
           <button onClick={this.copyLink}>Copy Link To Clipboard</button>
