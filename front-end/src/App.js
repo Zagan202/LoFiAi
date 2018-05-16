@@ -35,42 +35,40 @@ class App extends Component {
     return (
       <div>
       <Parallax className="App" ref={ref => (this.parallax = ref)} pages={3}>
+      
         <ParallaxLayer offset={0} speed={1} 
-                       style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <img src={lbg} alt="lbg" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={-1} 
-                       style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <img src={lbg} alt="lbg" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={-0.1} 
-                       style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <img src={logo} className= "App-logo" style={{display: 'block', width: "20%"}} alt=""/>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={0}
-                       style={{display: "flex", alignItems: "flex-end",
-                               justifyContent: "flex-start"}}>
+          style={{display: "flex", alignItems: "flex-end",
+                  justifyContent: "flex-start"}}>
           <img src={welcome} style={{display: "block", width: "35%"}} alt=""/>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.1} speed={-.05} 
-                       style={{display: "flex", alignItems: "flex-start",
-                               justifyContent: "flex-start",
-                               padding: "0% 0% 0% 9%"}}>
+          style={{display: "flex", alignItems: "flex-start",
+                  justifyContent: "flex-start", padding: "0% 0% 0% 9%"}}>
           <img src={hey} style={{display: "block", width: "22%"}} alt="hey"/>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={0}
-          style={{display: "flex", alignItems: "center",
-          justifyContent: "center"}}>
+          style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <img src={abg} alt="" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
         
         <ParallaxLayer offset={2} speed={0.8}
-          style={{display: "flex", alignItems: "center",
-          justifyContent: "center"}}>
+          style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <img src={abg} alt="" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
 
@@ -79,17 +77,13 @@ class App extends Component {
           <img src={study} style={{display: 'block', width: '100%' }} alt=""/>
         </ParallaxLayer>
 
-
-
         <ParallaxLayer offset={2} speed={0.4}
-          style={{display: "flex", alignItems: "flex-end",
-            justifyContent: "flex-end"}}>
+          style={{display: "flex", alignItems: "flex-end", justifyContent: "flex-end"}}>
           <img src={sleep} alt="" style={{display: "block", width: "50%"}}/>
         </ParallaxLayer>
         
         <ParallaxLayer offset={2} speed={0.8} className = "about"
-          style={{display: "flex", alignItems: "flex-end",
-          justifyContent: "flex-end"}}>
+          style={{display: "flex", alignItems: "flex-end", justifyContent: "flex-end"}}>
           <h1>About Me</h1>
         </ParallaxLayer>
 
@@ -98,7 +92,7 @@ class App extends Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={-1}>
-          <div id = "nav" className = "sicky" >
+          <div id = "nav" className = "sicky">
             <button className = "navbut" onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
@@ -106,8 +100,7 @@ class App extends Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.4} speed={-1}
-          style={{display: 'flex', alignItems: 'flex-start',
-            justifyContent: "flex-end"}}>
+          style={{display: 'flex', alignItems: 'flex-start', justifyContent: "flex-end"}}>
           <Share index={this.state.index}/>
         </ParallaxLayer>
 
