@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'; // used for connection to database from front end
-
+import play from './assets/play.svg'
+import pause from './assets/pause.svg'
 import './styles.css';
 
 class Song extends Component {
@@ -67,10 +68,13 @@ class Song extends Component {
   // Plays or pauses audio when the play/pause button is clicked
   playButton(){
     var playerElement = document.getElementById("player");
+    var pauseElement = document.getElementById("pause");
     if(playerElement.paused === true){
       playerElement.play();
+      pauseElement.src = pause;
     }else{
       playerElement.pause();
+      pauseElement.src = play;
     }
   }
 
@@ -86,13 +90,15 @@ class Song extends Component {
     // Necessary to avoid rendering before song paths have loaded
     if(this.state.data.length > 0){
       return (
-        <div>
+        <div style={{display: "flex", alignItems: "center"}}>
           <audio id="player" onEnded={this.playNext}>
             <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
           </audio>
-            <button onClick={this.playButton}>Play/Pause</button>
-            <input id="vol" type="range" min="0" max="100" defaultValue="100"
-              onInput={this.changeVolume}>
+            <img id="pause" src={play} alt="Play/Pause" onClick={this.playButton}
+              height="20%" width="20%" style={{float: "left"}}>
+            </img>
+            <input id="vol" className="slider" type="range" min="0" max="100"
+              defaultValue="100" onInput={this.changeVolume}>
             </input>
           </div>
       )

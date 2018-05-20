@@ -22,9 +22,11 @@ class Save extends Component{
   // Renders button which triggers press
   render(){
     return(
+      <div>
         <img alt="save" onClick={this.press} src={saveIcon}
-          height="10%" width="5%">
+        height="70%" width="70%">
         </img>
+      </div>
     )
   }
 }

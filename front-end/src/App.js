@@ -105,10 +105,14 @@ class App extends Component {
         {/* Song player and save button*/}
         <ParallaxLayer id="mid" offset={1.75} speed={0.9}
           style={{display: "flex", justifyContent: "center"}}>
+          <div style={{float: "left"}}>
           <Song url="http://localhost:4200/get/song"
             indexCallback={this.updateSongIndex}
             pathCallback={this.updateSongPath}/>
+          </div>
+          <div>
           <Save path={this.state.path}/>
+          </div>
         </ParallaxLayer>
 
       </Parallax>
