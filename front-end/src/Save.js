@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import saveIcon from './assets/save.svg'
 import './styles.css';
 // Save button compoenent
 
@@ -21,9 +22,9 @@ class Save extends Component{
   // Renders button which triggers press
   render(){
     return(
-      <div>
-        <button onClick={this.press}>Save Song</button>
-      </div>
+        <img alt="save" onClick={this.press} src={saveIcon}
+          height="10%" width="5%">
+        </img>
     )
   }
 }
