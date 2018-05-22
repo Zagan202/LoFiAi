@@ -35,17 +35,17 @@ class App extends Component {
     return (
       <div>
       <Parallax className="App" ref={ref => (this.parallax = ref)} pages={3}>
-      
+
         {/* Landing page background*/}
-        <ParallaxLayer offset={0} speed={0.1} 
+        <ParallaxLayer offset={0} speed={0.1}
           style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
           <img src={lbg} alt="top bg" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
 
         {/* Logo*/}
-        <ParallaxLayer offset={0} speed={-0.1} 
+        <ParallaxLayer offset={0} speed={-0.1}
           style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
-          <img src={logo} alt="logo" className= "App-logo" 
+          <img src={logo} alt="logo" className= "App-logo"
             style={{display: "block", width: "20%"}}/>
         </ParallaxLayer>
 
@@ -57,13 +57,13 @@ class App extends Component {
         </ParallaxLayer>
 
         {/* Player page background, Lofi studying*/}
-        <ParallaxLayer offset={1} speed={0} 
-          style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <ParallaxLayer offset={1} speed={0}
+          style={{display: "flex", alignItems: "flex-start", justifyContent: "center"}}>
           <img src={study} alt="study" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
 
         {/* "Hey" speech bubble*/}
-        <ParallaxLayer offset={0.1} speed={-.05} 
+        <ParallaxLayer offset={0.1} speed={-.05}
           style={{display: "flex", alignItems: "flex-start",
                   justifyContent: "flex-start", padding: "0% 0% 0% 9%"}}>
           <img src={hey} alt="hey" style={{display: "block", width: "22%"}}/>
@@ -122,4 +122,3 @@ class App extends Component {
 }
 
 export default App;
-
