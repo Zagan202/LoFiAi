@@ -56,8 +56,19 @@ class App extends Component {
           <img src={welcome} alt="welcome" style={{display: "block", width: "35%"}}/>
         </ParallaxLayer>
 
+        {/* Black line at the bottom of offset 0*/}
+        <ParallaxLayer offset={0} speed={0}  width="100%" height="1px"
+          style={{display: "flex", alignItems: "flex-end"}}>
+          <div style={{display: "block", width: "100%", height: "1%", background: "#000000"}}>
+          </div>
+        </ParallaxLayer>
+
         {/* Player page background, Lofi studying*/}
+<<<<<<< HEAD
         <ParallaxLayer offset={1} speed={0}
+=======
+        <ParallaxLayer offset={1} speed={0} 
+>>>>>>> a2cb559f1b15ece89cdf21069484a6a673f34a7e
           style={{display: "flex", alignItems: "flex-start", justifyContent: "center"}}>
           <img src={study} alt="study" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
@@ -65,7 +76,7 @@ class App extends Component {
         {/* "Hey" speech bubble*/}
         <ParallaxLayer offset={0.1} speed={-.05}
           style={{display: "flex", alignItems: "flex-start",
-                  justifyContent: "flex-start", padding: "0% 0% 0% 9%"}}>
+                  justifyContent: "flex-start", padding: "0% 0% 0% 20%"}}>
           <img src={hey} alt="hey" style={{display: "block", width: "22%"}}/>
         </ParallaxLayer>
 
