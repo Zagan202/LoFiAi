@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var songRoutes = require("./routes/songs"); // All routes relating to songs
 var port = process.env.PORT;
 var cors = require('cors'); // Middleware
+var path = require('path');
 
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://cmps115:lofiai@ds153869.mlab.com:53869/lofiai') // Establishing connection to database
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("../front-end/build/"));
+app.use(express.static("./front-end/build/"));
 
 app.use(songRoutes);
 
