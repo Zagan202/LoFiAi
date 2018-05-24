@@ -64,11 +64,7 @@ class App extends Component {
         </ParallaxLayer>
 
         {/* Player page background, Lofi studying*/}
-<<<<<<< HEAD
         <ParallaxLayer offset={1} speed={0}
-=======
-        <ParallaxLayer offset={1} speed={0} 
->>>>>>> a2cb559f1b15ece89cdf21069484a6a673f34a7e
           style={{display: "flex", alignItems: "flex-start", justifyContent: "center"}}>
           <img src={study} alt="study" style={{display: "block", width: "100%"}}/>
         </ParallaxLayer>
