@@ -5,9 +5,8 @@
   "scripts": {
     "postinstall": "cd front-end && npm install && cd ../back-end && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "cd back-end/server && npm start",
-    "start:client": "cd front-end && npm start",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+    "start": "node back-end/server/server.js",
+    "heroku-postbuild": "cd front-end && npm run build"
   },
   "author": "",
   "license": "ISC",

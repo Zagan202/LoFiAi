@@ -29,6 +29,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static("../front-end/build/"));
+
 app.use(songRoutes);
 
 // GET /
