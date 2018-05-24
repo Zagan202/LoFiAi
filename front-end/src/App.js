@@ -101,7 +101,7 @@ class App extends Component {
            <div className="display-linebreak">&</div>
 
            The founding LoFiAi-Team is a network of <div className="display-linebreak"> </div>
-           five Computer Science undergraduates from UCSC</p>
+           six Computer Science undergraduates from UCSC</p>
         </ParallaxLayer>
 
         {/* Navbar*/}
