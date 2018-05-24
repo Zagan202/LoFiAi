@@ -91,7 +91,17 @@ class App extends Component {
         {/* About page text */}
         <ParallaxLayer offset={2.1} speed={0.8}
         style={{display: "flex", alignContent: "flex-end", padding: "0% 0% 0% 10%"}}>
-          <p className = "about">About...</p>
+          <p className = "about">LoFiAi (loe-fy-ay-eye) is a platform for  curious listeners to hear music <div className="display-linebreak"> </div>
+           composed by artificial intelligence. Inspired by advancements<div className="display-linebreak"> </div>
+           made with Deep Learning and love of music, the Neural Network<div className="display-linebreak"> </div>
+           learns and generates its interpretation of the given music. <div className="display-linebreak"> </div>
+           <div className="display-linebreak">&</div>
+           <div className="display-linebreak">&</div>
+           <div className="display-linebreak">&</div>
+           <div className="display-linebreak">&</div>
+
+           The founding LoFiAi-Team is a network of <div className="display-linebreak"> </div>
+           five Computer Science undergraduates from UCSC</p>
         </ParallaxLayer>
 
         {/* Navbar*/}

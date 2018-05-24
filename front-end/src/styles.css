@@ -79,10 +79,10 @@ body {
 
 .about {
   display: block;
-  font-size: 50px;
+  font-size: 35px;
   font-family: p5hatty;
   color: #efefef;
-  text-align: center;
+  text-align: left;
 }
 
 .slider {
@@ -105,4 +105,6 @@ body {
   background-size: cover;
   cursor: pointer;
 }
-
+.display-linebreak {
+  white-space: pre-line;
+}
