@@ -36,7 +36,7 @@ class Song extends Component {
     // Get songs from the database
     // Then assign those songs to State.data
     // And set first to random, or urlFirst if possible
-      axios.get(this.props.url)
+      axios.get("http://lofiai.herokuapp.com/get/song")
       .then( res => {
         if(urlFirst < 0 || urlFirst > (res.data.length - 1)){
           // Variable for random first set here for transfer to App.js
