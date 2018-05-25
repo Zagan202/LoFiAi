@@ -16,9 +16,11 @@ import Save from './Save.js';
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {index: null, path: null};
+    this.state = {index: null, path: null, time: 0, length: 0};
     this.updateSongIndex = this.updateSongIndex.bind(this);
     this.updateSongPath = this.updateSongPath.bind(this);
+    this.updateSongTime = this.updateSongTime.bind(this);
+    this.updateSongLength = this.updateSongLength.bind(this);
     this.songName = this.songName.bind(this);
   }
 
@@ -28,8 +30,16 @@ class App extends Component {
   }
 
   // Function called by Song to store its file paths in App's state
-  updateSongPath(SongPath){
-    this.setState({path: SongPath});
+  updateSongPath(songPath){
+    this.setState({path: songPath});
+  }
+
+  updateSongTime(songTime){
+    this.setState({time: Math.floor(songTime)});
+  }
+
+  updateSongLength(songLength){
+    this.setState({length: Math.floor(songLength)});
   }
 
   // Returns the name of the song currently playing
@@ -82,7 +92,7 @@ class App extends Component {
         </ParallaxLayer>
 
         {/* "Hey" speech bubble*/}
-        <ParallaxLayer offset={0.1} speed={-.05}
+        <ParallaxLayer offset={0.1} speed={.2}
           style={{display: "flex", alignItems: "flex-start",
                   justifyContent: "flex-start", padding: "0% 0% 0% 20%"}}>
           <img src={hey} alt="hey" style={{display: "block", width: "22%"}}/>
@@ -110,12 +120,11 @@ class App extends Component {
             made with Deep Learning and love of music, the Neural Network
             <div className="display-linebreak"> </div>
             learns and generates its interpretation of the given music.
-            <div className="display-linebreak"> </div>
             <div className="display-linebreak">&</div>
             <div className="display-linebreak">&</div>
             <div className="display-linebreak">&</div>
             <div className="display-linebreak">&</div>
-
+            <div className="display-linebreak">&</div>
             The founding LoFiAi-Team is a network of
             <div className="display-linebreak"> </div>
             six Computer Science undergraduates from UCSC</div>
@@ -127,14 +136,17 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
-            <p className="trackName">
-              You're listening to track #{this.state.index}: {this.songName()}
-            </p>
+            {/*track info*/}
+            <div className="trackName">
+              <p>You're listening to track #{this.state.index}: "{this.songName()}"
+                @ {this.state.time}/{this.state.length}.
+              </p>
+            </div>
           </div>
         </ParallaxLayer>
 
         {/* Share buttons*/}
-        <ParallaxLayer offset={0.4} speed={-1}
+        <ParallaxLayer offset={0.2} speed={-1}
           style={{display: "flex", alignItems: "flex-start", justifyContent: "flex-end"}}>
           <Share index={this.state.index}/>
         </ParallaxLayer>
@@ -143,9 +155,13 @@ class App extends Component {
         <ParallaxLayer id="mid" offset={1.75} speed={0.9}
           style={{display: "flex", justifyContent: "center"}}>
           <div style={{float: "left"}}>
-            <Song url="http://localhost:4200/get/song"
+            <Song ref="song"
+              url="http://localhost:4200/get/song"
               indexCallback={this.updateSongIndex}
-              pathCallback={this.updateSongPath}/>
+              pathCallback={this.updateSongPath}
+              timeCallback={this.updateSongTime}
+              lengthCallback={this.updateSongLength}
+            />
           </div>
           <div>
             <Save path={this.state.path}/>

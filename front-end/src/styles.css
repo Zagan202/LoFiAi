@@ -97,9 +97,8 @@ body {
 
 .trackName{
   color: #efefef;
-  background: #333;
   font-family: "p5hatty";
-  font-size: 120%;
+  font-size: 19px;
   position: absolute;
   right: 1%;
 }
