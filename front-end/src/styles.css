@@ -3,6 +3,7 @@
   text-align: center;
 }
 
+/*LoFiAi logo*/
 .App-logo {
   padding: 25%;
   display: block;
@@ -10,14 +11,6 @@
   margin-right: auto;
   width: 10%;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -34,27 +27,39 @@
   src: url('./assets/p5hatty.ttf') format('truetype');
 }
 
+/* About page text*/
+.about {
+  display: block;
+  font-size: 35px;
+  font-family: p5hatty;
+  color: #efefef;
+  text-align: left;
+}
+
+/* Body*/
 body {
   margin: 0;
   background-color: #000000;
 }
 
+/* Used to create line breaks in <p> elements in a parallax layer*/
+.display-linebreak {
+  white-space: pre-line;
+}
+
+/* Navbar*/
 .navbar{
   overflow: hidden;
   background-color: #333;
 }
 
+/* Used when the mouse is over a navbar button*/
 .navbar button:hover {
   background-color: #007acc; /* darker blue */
   color: white;
 }
 
-.navbar button.active {
-  background-color: #0099ff; /* blue */
-  color: white;
-}
-
-/* navbar links */
+/* Navbar links */
 .navbar button {
   float: left;
   display: block;
@@ -67,24 +72,7 @@ body {
   font-family: p5hatty;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
-
-.about {
-  display: block;
-  font-size: 35px;
-  font-family: p5hatty;
-  color: #efefef;
-  text-align: left;
-}
-
+/* Used for the volume slider*/
 .slider {
   -webkit-appearance: none;
   appearance: none;
@@ -95,6 +83,7 @@ body {
   outline: none;
 }
 
+/* Knob on volume slider*/
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -105,6 +94,12 @@ body {
   background-size: cover;
   cursor: pointer;
 }
-.display-linebreak {
-  white-space: pre-line;
+
+.trackName{
+  color: #efefef;
+  background: #333;
+  font-family: "p5hatty";
+  font-size: 120%;
+  position: absolute;
+  right: 1%;
 }

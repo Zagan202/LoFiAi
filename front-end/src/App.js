@@ -19,6 +19,7 @@ class App extends Component {
     this.state = {index: null, path: null};
     this.updateSongIndex = this.updateSongIndex.bind(this);
     this.updateSongPath = this.updateSongPath.bind(this);
+    this.songName = this.songName.bind(this);
   }
 
   // Function called by Song to store its index in App's state
@@ -26,9 +27,20 @@ class App extends Component {
     this.setState({index: songIndex});
   }
 
-  //Function called by Song to store its file paths in App's state
+  // Function called by Song to store its file paths in App's state
   updateSongPath(SongPath){
     this.setState({path: SongPath});
+  }
+
+  // Returns the name of the song currently playing
+  songName(){
+    if(this.state.path != null){
+      var name = this.state.path;
+      name = name.split("lofiaisongs/")[1];
+      name = name.split(".")[0];
+      return(name);
+    }
+    return("");
   }
 
   render() {
@@ -91,17 +103,22 @@ class App extends Component {
         {/* About page text */}
         <ParallaxLayer offset={2.1} speed={0.8}
         style={{display: "flex", alignContent: "flex-end", padding: "0% 0% 0% 10%"}}>
-          <p className = "about">LoFiAi (loe-fy-ay-eye) is a platform for  curious listeners to hear music <div className="display-linebreak"> </div>
-           composed by artificial intelligence. Inspired by advancements<div className="display-linebreak"> </div>
-           made with Deep Learning and love of music, the Neural Network<div className="display-linebreak"> </div>
-           learns and generates its interpretation of the given music. <div className="display-linebreak"> </div>
-           <div className="display-linebreak">&</div>
-           <div className="display-linebreak">&</div>
-           <div className="display-linebreak">&</div>
-           <div className="display-linebreak">&</div>
+          <div className = "about">LoFiAi (loe-fy-ay-eye) is a platform for  curious listeners to hear music
+            
+            <div>composed by artificial intelligence. Inspired by advancements</div>
+            <div className="display-linebreak"> </div>
+            made with Deep Learning and love of music, the Neural Network
+            <div className="display-linebreak"> </div>
+            learns and generates its interpretation of the given music.
+            <div className="display-linebreak"> </div>
+            <div className="display-linebreak">&</div>
+            <div className="display-linebreak">&</div>
+            <div className="display-linebreak">&</div>
+            <div className="display-linebreak">&</div>
 
-           The founding LoFiAi-Team is a network of <div className="display-linebreak"> </div>
-           six Computer Science undergraduates from UCSC</p>
+            The founding LoFiAi-Team is a network of
+            <div className="display-linebreak"> </div>
+            six Computer Science undergraduates from UCSC</div>
         </ParallaxLayer>
 
         {/* Navbar*/}
@@ -110,6 +127,9 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
+            <p className="trackName">
+              You're listening to track #{this.state.index}: {this.songName()}
+            </p>
           </div>
         </ParallaxLayer>
 
@@ -123,12 +143,12 @@ class App extends Component {
         <ParallaxLayer id="mid" offset={1.75} speed={0.9}
           style={{display: "flex", justifyContent: "center"}}>
           <div style={{float: "left"}}>
-          <Song url="http://localhost:4200/get/song"
-            indexCallback={this.updateSongIndex}
-            pathCallback={this.updateSongPath}/>
+            <Song url="http://localhost:4200/get/song"
+              indexCallback={this.updateSongIndex}
+              pathCallback={this.updateSongPath}/>
           </div>
           <div>
-          <Save path={this.state.path}/>
+            <Save path={this.state.path}/>
           </div>
         </ParallaxLayer>
 
