@@ -13,6 +13,41 @@ import Song from './Song.js';
 import Share from './Share.js';
 import Save from './Save.js';
 import Learn from './Learn.js';
+import Dock from 'react-dock'
+
+const styles = {
+  root: {
+    fontSize: '16px',
+    color: '#999',
+    height: '100vh'
+  },
+  main: {
+    width: '100%',
+    height: '150%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: '30vh'
+  },
+  dockContent: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+  remove: {
+    position: 'absolute',
+    zIndex: 1,
+    right: '10px',
+    top: '10px',
+    cursor: 'pointer'
+  }
+}
+
+const positions = ['left', 'top', 'right', 'bottom'];
+const dimModes = ['transparent', 'none', 'opaque'];
 
 class App extends Component {
   constructor(props){
@@ -115,7 +150,7 @@ class App extends Component {
         <ParallaxLayer offset={2.1} speed={0.8}
         style={{display: "flex", alignContent: "flex-end", padding: "0% 0% 0% 10%"}}>
           <div className = "about">LoFiAi (loe-fy-ay-eye) is a platform for  curious listeners to hear music
-            
+
             <div>composed by artificial intelligence. Inspired by advancements</div>
             <div className="display-linebreak"> </div>
             made with Deep Learning and love of music, the Neural Network
@@ -137,10 +172,10 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
-            <button onclick={() => this.open()}>Learning With LoFi</button>
+            <button onClick={() => this.parallax.scrollTo(3)}>Learning With LoFi</button>
             {/*track info*/}
             <div className="trackName">
-              <p>You're listening to track #{this.state.index}: "{this.songName()}"
+              <p>Youre listening to track #{this.state.index}: "{this.songName()}"
                 @ {this.state.time}/{this.state.length}.
               </p>
             </div>
@@ -170,7 +205,7 @@ class App extends Component {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3} speed={0.95}>
+        <ParallaxLayer offset={3.2} speed={0.5}>
           <Learn/>
         </ParallaxLayer>
 
