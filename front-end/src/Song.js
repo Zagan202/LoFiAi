@@ -3,6 +3,7 @@ import axios from 'axios'; // used for connection to database from front end
 import play from './assets/play.svg'
 import pause from './assets/pause.svg'
 import './styles.css';
+// Song player component
 
 class Song extends Component {
   // Initialize
@@ -12,6 +13,8 @@ class Song extends Component {
     // first: initial song to play
     this.state = {data: [], first: null};
     this.playNext = this.playNext.bind(this);
+    this.second = this.second.bind(this);
+    this.duration = this.duration.bind(this);
   }
 
   // Returns song index from URL (?first=_#) or -1 if none exists
@@ -50,7 +53,6 @@ class Song extends Component {
           this.setState({data: res.data, first: urlFirst});
         }
       })
-      
   }
   
   // Randomly select next song path and play it
@@ -62,7 +64,20 @@ class Song extends Component {
     this.props.indexCallback(index);
     this.props.pathCallback(this.state.data[index].path);
     playerElement.src = this.state.data[index].path;
+    this.props.lengthCallback(playerElement.duration);
     playerElement.play();
+  }
+
+  // Send current time to App every second
+  second(){
+    var playerElement = document.getElementById("player");
+    this.props.timeCallback(playerElement.currentTime);
+  }
+
+  // Send the current duration to App when it changes
+  duration(){
+    var playerElement = document.getElementById("player");
+    this.props.lengthCallback(playerElement.duration);
   }
 
   // Plays or pauses audio when the play/pause button is clicked
@@ -91,7 +106,8 @@ class Song extends Component {
     if(this.state.data.length > 0){
       return (
         <div style={{display: "flex", alignItems: "center"}}>
-          <audio id="player" onEnded={this.playNext}>
+          <audio id="player" ref="player" onEnded={this.playNext} 
+            onTimeUpdate={this.second} onDurationChange={this.duration}>
             <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
           </audio>
             <img id="pause" src={play} alt="Play/Pause" onClick={this.playButton}
