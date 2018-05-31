@@ -12,6 +12,7 @@ import welcome from './assets/welcome.svg';
 import Song from './Song.js';
 import Share from './Share.js';
 import Save from './Save.js';
+import Learn from './Learn.js';
 
 class App extends Component {
   constructor(props){
@@ -53,10 +54,10 @@ class App extends Component {
     return("");
   }
 
-  render() {
-    return (
+  render(){
+    return(
       <div>
-      <Parallax className="App" ref={ref => (this.parallax = ref)} pages={3}>
+      <Parallax className="App" ref={ref => (this.parallax = ref)} pages={4}>
 
         {/* Landing page background*/}
         <ParallaxLayer offset={0} speed={0.1}
@@ -136,6 +137,7 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
+            <button onclick={() => this.open()}>Learning With LoFi</button>
             {/*track info*/}
             <div className="trackName">
               <p>You're listening to track #{this.state.index}: "{this.songName()}"
@@ -166,6 +168,10 @@ class App extends Component {
           <div>
             <Save path={this.state.path}/>
           </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3} speed={0.95}>
+          <Learn/>
         </ParallaxLayer>
 
       </Parallax>

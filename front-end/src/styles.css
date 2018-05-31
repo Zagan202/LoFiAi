@@ -55,7 +55,7 @@ body {
 
 /* Used when the mouse is over a navbar button*/
 .navbar button:hover {
-  background-color: #007acc; /* darker blue */
+  background-color: #53a66a;
   color: white;
 }
 

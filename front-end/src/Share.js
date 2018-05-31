@@ -35,6 +35,7 @@ class Share extends Component{
     var element = document.getElementById("linkdiv");
     if(element.children.length === 0){
       var input = document.createElement("input");
+      input.size = "8";
       element.appendChild(input);
       input.value = link;
       input.select();
@@ -70,12 +71,12 @@ class Share extends Component{
     return(
       <div>
         <div>
-          <img alt="twitter" onClick={this.tweet} src={twIcon} 
+          <img alt="twitter" onClick={this.tweet} src={twIcon}
             height="50%" width="50%">
           </img>
         </div>
         <div>
-          <img alt="facebook" onClick={this.face} src={fbIcon} 
+          <img alt="facebook" onClick={this.face} src={fbIcon}
             height="50%" width="50%">
           </img>
         </div>
