@@ -33,17 +33,13 @@ class Share extends Component{
   copyLink(){
     var link = this.getShareLink();
     var element = document.getElementById("linkdiv");
-    if(element.children.length === 0){
-      var input = document.createElement("input");
-      input.size = "8";
-      element.appendChild(input);
-      input.value = link;
-      input.select();
-    }else{
-      element.children[0].value = link;
-      element.children[0].select();
-    }
+    var input = document.createElement("input");
+    input.size = "6";
+    element.appendChild(input);
+    input.value = link;
+    input.select();
     document.execCommand("Copy");
+    element.removeChild(input);
   }
 
   // Opens a tweet sharing our website
@@ -69,22 +65,23 @@ class Share extends Component{
   // Renders share buttons
   render(){
     return(
-      <div>
+      <div style={{display: "block", padding: "1%1%1%1%"}}>
         <div>
-          <img alt="twitter" onClick={this.tweet} src={twIcon}
-            height="50%" width="50%">
+        <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
+            height="3%" width="3%" style={{float: "right", padding: "0%.5%0%.5%"}}>
           </img>
         </div>
         <div>
           <img alt="facebook" onClick={this.face} src={fbIcon}
-            height="50%" width="50%">
+            height="3%" width="3%" style={{float: "right", padding: "0%.5%0%.5%"}}>
           </img>
         </div>
         <div>
-          <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
-            height="50%" width="50%">
+          
+          <img alt="twitter" onClick={this.tweet} src={twIcon}
+            height="3%" width="3%" style={{float: "right", padding: "0%.5%0%.5%"}}>
           </img>
-          <div id="linkdiv"></div>
+          <div id="linkdiv" style={{visibility: "visible"}}></div>
         </div>
       </div>
     )

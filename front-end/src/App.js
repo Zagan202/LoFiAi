@@ -13,41 +13,6 @@ import Song from './Song.js';
 import Share from './Share.js';
 import Save from './Save.js';
 import Learn from './Learn.js';
-import Dock from 'react-dock'
-
-const styles = {
-  root: {
-    fontSize: '16px',
-    color: '#999',
-    height: '100vh'
-  },
-  main: {
-    width: '100%',
-    height: '150%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    paddingTop: '30vh'
-  },
-  dockContent: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column'
-  },
-  remove: {
-    position: 'absolute',
-    zIndex: 1,
-    right: '10px',
-    top: '10px',
-    cursor: 'pointer'
-  }
-}
-
-const positions = ['left', 'top', 'right', 'bottom'];
-const dimModes = ['transparent', 'none', 'opaque'];
 
 class App extends Component {
   constructor(props){
@@ -179,17 +144,25 @@ class App extends Component {
                 @ {this.state.time}/{this.state.length}.
               </p>
             </div>
+            <Share index={this.state.index}/>
           </div>
         </ParallaxLayer>
+
+        
 
         {/* Share buttons*/}
         <ParallaxLayer offset={0.2} speed={-1}
           style={{display: "flex", alignItems: "flex-start", justifyContent: "flex-end"}}>
-          <Share index={this.state.index}/>
+          
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3.2} speed={0.5} width="50%"
+          style={{display: "flex", justifyContent: "flex-start"}}>
+          <Learn/>
         </ParallaxLayer>
 
         {/* Song player and save button*/}
-        <ParallaxLayer id="mid" offset={1.75} speed={0.9}
+        <ParallaxLayer offset={1.75} speed={0.9}
           style={{display: "flex", justifyContent: "center"}}>
           <div style={{float: "left"}}>
             <Song ref="song"
@@ -203,10 +176,6 @@ class App extends Component {
           <div>
             <Save path={this.state.path}/>
           </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={3.2} speed={0.5}>
-          <Learn/>
         </ParallaxLayer>
 
       </Parallax>

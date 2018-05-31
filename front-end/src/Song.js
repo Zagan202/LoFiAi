@@ -71,7 +71,11 @@ class Song extends Component {
   // Send current time to App every second
   second(){
     var playerElement = document.getElementById("player");
-    this.props.timeCallback(playerElement.currentTime);
+    if(playerElement.currentTime != NaN){
+      this.props.timeCallback(playerElement.currentTime);
+    }else{
+      this.props.timeCallback(0);
+    }
   }
 
   // Send the current duration to App when it changes
