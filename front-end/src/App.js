@@ -134,13 +134,14 @@ class App extends Component {
 
         </ParallaxLayer>
 
-        {/* About page text */}
+        {/* About page text*/}
 
         <ParallaxLayer offset={2.1} speed={0.8}
         style={{display: "flex", alignContent: "left", padding: "0% 0% 25% 2%"}}>
-        <About />
+        <About/>
         </ParallaxLayer>
 
+        {/* Learning with LoFi*/}
         <ParallaxLayer offset={3.2} speed={0.5} width="50%"
           style={{display: "flex", justifyContent: "flex-start"}}>
           <Learn/>
@@ -158,9 +159,12 @@ class App extends Component {
               lengthCallback={this.updateSongLength}
             />
           </div>
+
+          {/* Save Button */}
           <div>
             <Save path={this.state.path}/>
           </div>
+
         </ParallaxLayer>
       </Parallax>
       </div>
