@@ -13,7 +13,7 @@ import Song from './Song.js';
 import Share from './Share.js';
 import Save from './Save.js';
 import Learn from './Learn.js';
-
+import About from './About.js';
 class App extends Component {
   constructor(props){
     super(props);
@@ -111,26 +111,6 @@ class App extends Component {
           <img src={sleep} alt="" style={{display: "block", width: "50%"}}/>
         </ParallaxLayer>
 
-        {/* About page text */}
-        <ParallaxLayer offset={2.1} speed={0.8}
-        style={{display: "flex", alignContent: "flex-end", padding: "0% 0% 0% 10%"}}>
-          <div className = "about">LoFiAi (loe-fy-ay-eye) is a platform for  curious listeners to hear music
-
-            <div>composed by artificial intelligence. Inspired by advancements</div>
-            <div className="display-linebreak"> </div>
-            made with Deep Learning and love of music, the Neural Network
-            <div className="display-linebreak"> </div>
-            learns and generates its interpretation of the given music.
-            <div className="display-linebreak">&</div>
-            <div className="display-linebreak">&</div>
-            <div className="display-linebreak">&</div>
-            <div className="display-linebreak">&</div>
-            <div className="display-linebreak">&</div>
-            The founding LoFiAi-Team is a network of
-            <div className="display-linebreak"> </div>
-            six Computer Science undergraduates from UCSC</div>
-        </ParallaxLayer>
-
         {/* Navbar*/}
         <ParallaxLayer offset={0} speed={-1}>
           <div id = "nav" className = "navbar">
@@ -148,12 +128,17 @@ class App extends Component {
           </div>
         </ParallaxLayer>
 
-        
-
         {/* Share buttons*/}
         <ParallaxLayer offset={0.2} speed={-1}
           style={{display: "flex", alignItems: "flex-start", justifyContent: "flex-end"}}>
-          
+
+        </ParallaxLayer>
+
+        {/* About page text */}
+
+        <ParallaxLayer offset={2.1} speed={0.8}
+        style={{display: "flex", alignContent: "left", padding: "0% 0% 25% 2%"}}>
+        <About />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.2} speed={0.5} width="50%"
@@ -177,7 +162,6 @@ class App extends Component {
             <Save path={this.state.path}/>
           </div>
         </ParallaxLayer>
-
       </Parallax>
       </div>
     );

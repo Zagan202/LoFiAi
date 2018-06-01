@@ -227,3 +227,12 @@ generated automatically and are common for each slider. */
   -moz-transition: margin 0.3s ease 0.1s;
   -webkit-transition: margin 0.3s ease 0.1s;
 }
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #53a66a;
+}
+a:hover {
+    color: #FF9B23;
+}
