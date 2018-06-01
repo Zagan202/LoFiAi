@@ -102,130 +102,136 @@ body {
   top: 0%;
 }
 
-/* Learning with LoFi Section*/
 .accordion {
-  -webkit-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
-  -moz-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
-  box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
-  font-family: Arial, Helvetica, sans-serif;
-  border-color: #30bb64;
-  border-style: solid;
-  border-width: 0px;
-  border-radius: 21px;
-  margin: 0;
-  height: 74%;
-  width: 80%;
+    -webkit-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    -moz-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #505050;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 0 auto;
+    height: 500px;
+    width: 1180px;
 }
 
 .accordion > ul > li,
 .accordion-title,
 .accordion-content,
 .accordion-separator {
-  float: left;
+    float: left;
 }
 
 .accordion > ul > li {
-  background-color: #1f8245;
-  margin-right: -600px;
-  margin-bottom: -0px;
+    background-color: #1f1f1f;
+    margin-right: -730px;
+    margin-bottom: -0px;
 }
 
 .accordion-select:checked ~ .accordion-separator {
-    margin-right: 600px;
+    margin-right: 730px;
     margin-bottom: 0px;
 }
 
 .accordion-title,
 .accordion-select  {
-  background-color: #0000ff;
-  color: #ffe2e2;
-  width: 40px;
-  height: 500px;
-  font-size: 15px;
+    font-family: p5hatty;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    width: 50px;
+    height: 500px;
+    font-size: 25px;
 }
 
 .accordion-title span {
-  margin-bottom: 20px;
-  margin-left: 20px;
+    margin-bottom: 25px;
+    margin-left: 25px;
 }
 
 .accordion-select:hover ~ .accordion-title,
 .accordion-select:checked ~ .accordion-title {
-  background-color: #1b6c3a;
+    background-color: #53a66a;
 }
 
 .accordion-title span  {
-  transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -ms-writing-mode: lr-bt;
-  writing-mode: lr-bt;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  margin-left: 0px;
-  line-height: 40px;
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-writing-mode: lr-bt;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    margin-left: 0px;
+    line-height: 50px;
 }
 
 .accordion-content {
-  background-color: #1d1d1d;
-  color: #ffffff;
-  height: 452px;
-  width: 552px;
-  padding: 24px;
+    background-color: #000000;
+    color: #f5f2f0;
+    height: 442px;
+    width: 672px;
+    padding: 29px;
 }
 
+.accordion-content1 {
+    background-color: 'red';
+    color: #f5f2f0;
+    height: 442px;
+    width: 672px;
+    padding: 29px;
+}
 .accordion-title,
 .accordion-select:checked ~ .accordion-content {
-  margin-right: 1px;
-  margin-bottom: 1px;
+    margin-right: 0px;
+    margin-bottom: 0px;
 }
 
 /* Do not change following properties, they aren't
 generated automatically and are common for each slider. */
 .accordion {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .accordion > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 101%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 101%;
 }
 
 .accordion > ul > li,
 .accordion-title {
-  position: relative;
+    position: relative;
 }
 
 .accordion-select {
-  cursor: pointer;
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  margin: 0;
-  z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
 }
 
 .accordion-title span {
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  white-space: nowrap;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    white-space: nowrap;
 }
 
 .accordion-content {
-  position: relative;
-  overflow: auto;
+    position: relative;
+    overflow: auto;
 }
 
 .accordion-separator {
-  transition: margin 0.3s ease 0.1s;
-  -o-transition: margin 0.3s ease 0.1s;
-  -moz-transition: margin 0.3s ease 0.1s;
-  -webkit-transition: margin 0.3s ease 0.1s;
+    transition: margin 0.3s ease 0.1s;
+    -o-transition: margin 0.3s ease 0.1s;
+    -moz-transition: margin 0.3s ease 0.1s;
+    -webkit-transition: margin 0.3s ease 0.1s;
 }
 a {
     text-decoration: none;
