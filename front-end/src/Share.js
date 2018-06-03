@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import menu from "./assets/menu.svg";
 import twIcon from "./assets/twIcon.svg";
 import fbIcon from "./assets/fbIcon.svg";
 import cbIcon from "./assets/clipboard.svg"

@@ -71,17 +71,21 @@ class Song extends Component {
   // Send current time to App every second
   second(){
     var playerElement = document.getElementById("player");
-    if(playerElement.currentTime != NaN){
-      this.props.timeCallback(playerElement.currentTime);
-    }else{
+    if(isNaN(playerElement.currentTime)){
       this.props.timeCallback(0);
+    }else{
+      this.props.timeCallback(playerElement.currentTime);
     }
   }
 
   // Send the current duration to App when it changes
   duration(){
     var playerElement = document.getElementById("player");
-    this.props.lengthCallback(playerElement.duration);
+    if(isNaN(playerElement.duration)){
+      this.props.lengthCallback(0);
+    }else{
+      this.props.lengthCallback(playerElement.duration);
+    }
   }
 
   // Plays or pauses audio when the play/pause button is clicked

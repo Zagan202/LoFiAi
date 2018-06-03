@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 
 class About extends Component {
-  constructor(props){
-    super(props);
-  }
+
   render(){
     return(
       <div className = "about" align="left" >
@@ -19,17 +17,35 @@ class About extends Component {
           six Computer Science undergraduates from UCSC
         </p>
         <p align="left">
-          <a href="https://www.linkedin.com/in/lawrence-lawson/" target="_blank">Lawrence Lawson</a>
+          <a href="https://www.linkedin.com/in/lawrence-lawson/" target="_blank"
+            rel="noopener noreferrer">
+            Lawrence Lawson
+          </a>
           <br/>
-          <a href="https://github.com/ajperrot" target="_blank">Alex Perrotti</a>
+          <a href="https://github.com/ajperrot" target="_blank"
+            rel="noopener noreferrer">
+            Alex Perrotti
+          </a>
           <br/>
-          <a href="https://github.com/chesmend" target="_blank">Christopher Mendoza</a>
+          <a href="https://github.com/chesmend" target="_blank"
+            rel="noopener noreferrer">
+            Christopher Mendoza
+          </a>
           <br/>
-          <a href="https://github.com/karengl" target="_blank">Karen Lee</a>
+          <a href="https://github.com/karengl" target="_blank"
+            rel="noopener noreferrer">
+            Karen Lee
+          </a>
           <br/>
-          <a href="https://github.com/vyao95" target="_blank">Vincent Yao</a>
+          <a href="https://github.com/vyao95" target="_blank"
+            rel="noopener noreferrer">
+            Vincent Yao
+          </a>
           <br/>
-          <a href="https://jcatajoy.myportfolio.com/" target="_blank">Janel Catajoy</a>
+          <a href="https://jcatajoy.myportfolio.com/" target="_blank"
+            rel="noopener noreferrer">
+            Janel Catajoy
+          </a>
           <br/>
         </p>
       </div>

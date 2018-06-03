@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './styles.css';
 
 class Learn extends Component {
-  constructor(props){
-  super(props);
-  }
 
   render(){
     return(
@@ -87,7 +84,8 @@ class Learn extends Component {
             </div>
             <div className="accordion-content">
               <p align="left">
-                <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/" target="_blank">
+                <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/"
+                  target="_blank" rel="noopener noreferrer">
                   WaveNet
                 </a>
                 &nbsp; is a deep neural network architecture that generates raw audio.
@@ -105,8 +103,11 @@ class Learn extends Component {
                 most notably music, which is the focus of LoFiAi.
                 <br/>
                 The repository for the tensorflow wavenet implementation we used can
-                be found here:
-                <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank"/>
+                be found here:&nbsp;
+                <a href="https://github.com/ibab/tensorflow-wavenet"
+                  target="_blank" rel="noopener noreferrer">
+                  https://github.com/ibab/tensorflow-wavenet
+                </a>
               </p>
             </div>
             <div className="accordion-separator"></div>
@@ -130,7 +131,8 @@ class Learn extends Component {
                 Here are a few other organizations that are making strides
                 in the same field:
                 <br/><br/>
-                <a href="https://magenta.tensorflow.org" target="_blank">
+                <a href="https://magenta.tensorflow.org"
+                  target="_blank" rel="noopener noreferrer">
                   Google’s Magenta
                 </a>
                 &nbsp; takes in midi files as input data to learn from
@@ -139,7 +141,8 @@ class Learn extends Component {
                 and there's a ton of great documentation with the API
                 as well as an active community.
                 <br/><br/>
-                <a href="https://www.jukedeck.com/?no-redirect=true" target="_blank">
+                <a href="https://www.jukedeck.com/?no-redirect=true"
+                  target="_blank" rel="noopener noreferrer">
                   JukeDeck
                 </a>
                  &nbsp; is a closed source service that generates tracks of all genres
@@ -148,7 +151,8 @@ class Learn extends Component {
                 with their goal being the creation of royalty free music
                 custom generated for user needs.
                 <br/><br/>
-                <a href="http://www.flow-machines.com" target="_blank">
+                <a href="http://www.flow-machines.com"
+                  target="_blank" rel="noopener noreferrer">
                   Flow Machines
                 </a>
                 &nbsp; is a Sony Computer Science Laboratories
@@ -162,9 +166,17 @@ class Learn extends Component {
                 If you would like to learn about strategies for AI music composition
                 outside of those listed above, below are a few links
                 to pique your interest:&nbsp;
-                <a href="http://www.asimovinstitute.org/analyzing-deep-learning-tools-music/" target="_blank">Analyzing Deep Learning Music Tools</a>
-                <a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0" target="_blank">, Neural Networks and Music</a>
-                <a href="http://dadabots.com" target="_blank">, Dadabots</a>
+                <a href="http://www.asimovinstitute.org/analyzing-deep-learning-tools-music/"
+                  target="_blank" rel="noopener noreferrer">
+                  Analyzing Deep Learning Music Tools
+                </a>
+                <a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0"
+                  target="_blank" rel="noopener noreferrer">
+                  , Neural Networks and Music
+                </a>
+                <a href="http://dadabots.com" target="_blank" rel="noopener noreferrer">
+                  , Dadabots
+                </a>
               </p>
             </div>
             <div className="accordion-separator"></div>
@@ -249,7 +261,7 @@ class Learn extends Component {
               <span>What is this page for?</span>
             </div>
             <div className="accordion-content">
-              <p align="right" position="absolute">
+              <p align="left">
                 Learning witrh LoFi is our attempt as AI developers to explain the
                 basics of the process.
                 <br />
@@ -259,10 +271,13 @@ class Learn extends Component {
                 empower them to experiment themselves, without being intimidated
                 by the scientific specifics.<br />
                 Our project is open source, so if you would like to contribute or start training your own music click&nbsp;
-                <a href="https://github.com/Zagan202/LoFiAi" target="_blank">here</a>
+                <a href="https://github.com/Zagan202/LoFiAi"
+                  target="_blank" rel="noopener noreferrer">
+                  here
+                </a>
                 &nbsp;to find out more.
                 <br /><br />
-                <img align = "right" src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg" />
+                <img alt="" src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg"/>
               </p>
             </div>
             <div className="accordion-separator"></div>
