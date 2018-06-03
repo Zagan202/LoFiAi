@@ -65,21 +65,21 @@ class Share extends Component{
   // Renders share buttons
   render(){
     return(
-      <div style={{display: "block", padding: "1%1%1%1%"}}>
+      <div style={{display: "block", padding: ".5%1%.5%1%"}}>
         <div>
         <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
-            height="1.5%" width="1.5%" style={{float: "right", padding: "0%.5%0%.5%"}}>
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".05%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
           <img alt="facebook" onClick={this.face} src={fbIcon}
-            height="1.5%" width="1.5%" style={{float: "right", padding: "0%.5%0%.5%"}}>
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
 
           <img alt="twitter" onClick={this.tweet} src={twIcon}
-            height="1.5%" width="1.5%" style={{float: "right", padding: "0%.5%0%.5%"}}>
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
           <div id="linkdiv" style={{visibility: "visible"}}></div>
         </div>
