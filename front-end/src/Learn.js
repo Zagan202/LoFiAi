@@ -40,7 +40,6 @@ class Learn extends Component {
                 This allows for a lot more flexibility and growth for applications that
                 utilize this technology which is right at home with LoFiAi.
               </p>
-              <img alt="" src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg" height="80" width="150"/>
             </div>
             <div className="accordion-separator"></div>
           </li>
@@ -88,10 +87,10 @@ class Learn extends Component {
             </div>
             <div className="accordion-content">
               <p align="left">
-                <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">
+                <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/" target="_blank">
                   WaveNet
                 </a>
-                is a deep neural network architecture that generates raw audio.
+                &nbsp; is a deep neural network architecture that generates raw audio.
                 The network uses a dataset of audio waveforms (.wav files)
                 and outputs its interpretation of the dataset one sample at a time.
                 A common application of this technology is text-to-speech(TTS)
@@ -107,7 +106,7 @@ class Learn extends Component {
                 <br/>
                 The repository for the tensorflow wavenet implementation we used can
                 be found here:
-                <a href="https://github.com/ibab/tensorflow-wavenet"/>
+                <a href="https://github.com/ibab/tensorflow-wavenet" target="_blank"/>
               </p>
             </div>
             <div className="accordion-separator"></div>
@@ -122,7 +121,6 @@ class Learn extends Component {
                 With increases in processing power come increases in machine learning
                 applications. As stated earlier there are many common applications for
                 machine learning that we use both actively and passively everyday.
-                <br/>
                 One of the more niche applications of AI and Machine Learning
                 is music composition. Part of our inspiration for LoFiAi as developers
                 is this uncommoness; it's a mostly untapped area of the field
@@ -131,43 +129,42 @@ class Learn extends Component {
                 nor will we be the last.
                 Here are a few other organizations that are making strides
                 in the same field:
-                <br/>
-                <a href="https://magenta.tensorflow.org">
+                <br/><br/>
+                <a href="https://magenta.tensorflow.org" target="_blank">
                   Google’s Magenta
                 </a>
-                takes in midi files as input data to learn from
+                &nbsp; takes in midi files as input data to learn from
                 and generate new music in midi form.
                 There's a ton of pre-trained models for different genres,
                 and there's a ton of great documentation with the API
                 as well as an active community.
-                <br/>
-                <a href="https://www.jukedeck.com/?no-redirect=true">
+                <br/><br/>
+                <a href="https://www.jukedeck.com/?no-redirect=true" target="_blank">
                   JukeDeck
                 </a>
-                is a closed source service that generates tracks of all genres
+                 &nbsp; is a closed source service that generates tracks of all genres
                 using deep learning neural networks.
                 The output is extremely naturalistic,
                 with their goal being the creation of royalty free music
                 custom generated for user needs.
-                <br/>
-                <a href="http://www.flow-machines.com">
+                <br/><br/>
+                <a href="http://www.flow-machines.com" target="_blank">
                   Flow Machines
                 </a>
-                is a Sony Computer Science Laboratories
+                &nbsp; is a Sony Computer Science Laboratories
                 sponsored research effort to generate pop songs.
                 The API is not open to the public.
                 However, the songs it’s generated are.
                 The technology used is based off of Markov models,
                 which are commonly used to model statistical properties
                 of temporal sequences.
-                <br/>
+                <br/><br/>
                 If you would like to learn about strategies for AI music composition
                 outside of those listed above, below are a few links
-                to pique your interest:
-                <a href="http://www.asimovinstitute.org/analyzing-deep-learning-tools-music/"/>
-                <a href="http://www.flow-machines.com/#"/>
-                <a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0"/>
-                <a href="http://dadabots.com"/>
+                to pique your interest:&nbsp;
+                <a href="http://www.asimovinstitute.org/analyzing-deep-learning-tools-music/" target="_blank">Analyzing Deep Learning Music Tools</a>
+                <a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0" target="_blank">, Neural Networks and Music</a>
+                <a href="http://dadabots.com" target="_blank">, Dadabots</a>
               </p>
             </div>
             <div className="accordion-separator"></div>
@@ -187,14 +184,14 @@ class Learn extends Component {
                 However, this is also by far the largest factor in
                 determining the speed at which training takes place,
                 as each step of training analyzes this number of samples.
-                <br/>
+                <br/>                 <br/>
                 Sample Rate: This is a term used in audio outside of AI generation,
                 referring to the number of “samples” per second in a given audio file.
                 Samples can be thought of as the smallest unit of data referring
                 to a soundwave. 44100 (44.1kHz) has been the standard for years,
                 however, LoFiAi uses a more “Lo-Fi” sample rate of 16000,
                 to allow for much faster AI training.
-                <br/>
+                <br/>                 <br/>
                 Learning Rate: AI learn or “train” through a series of baby steps
                 toward one target set of values. This process is “Gradient Descent”
                 and is the basis of modern “Data Science”.
@@ -252,13 +249,20 @@ class Learn extends Component {
               <span>What is this page for?</span>
             </div>
             <div className="accordion-content">
-              <p align="left">
+              <p align="right" position="absolute">
                 Learning witrh LoFi is our attempt as AI developers to explain the
-                basics of the process. There's very little in the way of approachable
-                resources for learning about this material, so our goal is to get all 
-                kinds of people excited about the possibilities of AI in music, and
+                basics of the process.
+                <br />
+                There's very little in the way of approachable
+                resources for learning about this material, <br /> so our goal is to get all
+                kinds of people excited about the possibilities of AI in music,<br /> and
                 empower them to experiment themselves, without being intimidated
-                by the scientific specifics.
+                by the scientific specifics.<br />
+                Our project is open source, so if you would like to contribute or start training your own music click&nbsp;
+                <a href="https://github.com/Zagan202/LoFiAi" target="_blank">here</a>
+                &nbsp;to find out more.
+                <br /><br />
+                <img align = "right" src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg" />
               </p>
             </div>
             <div className="accordion-separator"></div>
