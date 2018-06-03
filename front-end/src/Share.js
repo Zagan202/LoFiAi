@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import menu from "./assets/menu.svg";
 import twIcon from "./assets/twIcon.svg";
 import fbIcon from "./assets/fbIcon.svg";
 import cbIcon from "./assets/clipboard.svg"
@@ -33,16 +32,13 @@ class Share extends Component{
   copyLink(){
     var link = this.getShareLink();
     var element = document.getElementById("linkdiv");
-    if(element.children.length === 0){
-      var input = document.createElement("input");
-      element.appendChild(input);
-      input.value = link;
-      input.select();
-    }else{
-      element.children[0].value = link;
-      element.children[0].select();
-    }
+    var input = document.createElement("input");
+    input.size = "6";
+    element.appendChild(input);
+    input.value = link;
+    input.select();
     document.execCommand("Copy");
+    element.removeChild(input);
   }
 
   // Opens a tweet sharing our website
@@ -68,22 +64,23 @@ class Share extends Component{
   // Renders share buttons
   render(){
     return(
-      <div>
+      <div style={{display: "block", padding: ".5%1%.5%1%"}}>
         <div>
-          <img alt="twitter" onClick={this.tweet} src={twIcon} 
-            height="50%" width="50%">
+        <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".05%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
-          <img alt="facebook" onClick={this.face} src={fbIcon} 
-            height="50%" width="50%">
+          <img alt="facebook" onClick={this.face} src={fbIcon}
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
-          <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
-            height="50%" width="50%">
+
+          <img alt="twitter" onClick={this.tweet} src={twIcon}
+            height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
-          <div id="linkdiv"></div>
+          <div id="linkdiv" style={{visibility: "visible"}}></div>
         </div>
       </div>
     )
