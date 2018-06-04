@@ -64,7 +64,7 @@ class Share extends Component{
   // Renders share buttons
   render(){
     return(
-      <div style={{display: "block", padding: ".5%1%.5%1%"}}>
+      <div style={{display: "block", padding: ".8%1%.8%1%"}}>
         <div>
         <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".05%.5%.25%.5%"}}>

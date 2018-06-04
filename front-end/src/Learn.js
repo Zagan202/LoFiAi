@@ -262,7 +262,7 @@ class Learn extends Component {
             </div>
             <div className="accordion-content">
               <p align="left">
-                Learning witrh LoFi is our attempt as AI developers to explain the
+                Learning with LoFi is our attempt as AI developers to explain the
                 basics of the process.
                 <br />
                 There's very little in the way of approachable

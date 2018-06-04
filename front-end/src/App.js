@@ -120,7 +120,7 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(3)}>Learning With LoFi</button>
             {/*track info*/}
             <div className="trackName">
-              <p>Youre listening to track #{this.state.index}: "{this.songName()}"
+              <p>You're listening to track #{this.state.index}: "{this.songName()}"
                 @ {this.state.time}/{this.state.length}.
               </p>
             </div>
