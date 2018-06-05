@@ -12,7 +12,9 @@ class Learn extends Component {
               className="accordion-select"
             />
             <div className="accordion-title">
-              <span>What is Deep Learning?</span>
+              <span>
+                What is Deep Learning?
+              </span>
             </div>
             <div className="accordion-content" >
               <p align="left">
@@ -21,8 +23,8 @@ class Learn extends Component {
                 sophisticated automation techniques known as predictive analysis. Predictive
                 analysis uses new and past information to assign values to the likelihood of
                 future events.
-                <br />
-                <br />
+                <br/>
+                <br/>
                 Audio-centric Deep Learning is commonly used for voice commands given to AI
                 assistants such as Apple’s SIRI and Amazon’s Alexa. These devices use software
                 that analyzes and recognizes keywords or key parts of words. With that info it
@@ -30,8 +32,8 @@ class Learn extends Component {
                 execute a command accordingly. Much like how humans, from experience, can
                 assume or predict certain outcomes or phrases of speech from their own
                 experiences.
-                <br />
-                <br />
+                <br/>
+                <br/>
                 What’s important about Deep Learning is its ability to adapt given new
                 information without hard coding a specific rule set for every situation.
                 This allows for a lot more flexibility and growth for applications that
@@ -41,9 +43,11 @@ class Learn extends Component {
             <div className="accordion-separator"></div>
           </li>
           <li>
-            <input type="radio" name="select" className="accordion-select" />
+            <input type="radio" name="select" className="accordion-select"/>
             <div className="accordion-title">
-              <span>What are Neural Networks?</span>
+              <span>
+                What are Neural Networks?
+              </span>
             </div>
             <div className="accordion-content">
               <p align="left">
@@ -52,35 +56,43 @@ class Learn extends Component {
                 including handwriting recognition, facial recognition,
                 and —related to this project— speech-to-text transcription.
                 This can be done through either supervised or unsupervised learning.
-                <br />
-                <br />
+                <br/>
+                <br/>
                 Unsupervised learning occurs when the algorithm attempts to cluster the data given
-                into subsets made up of similar objects or data without being given a target to focus on.
+                into subsets made up of similar objects or data without
+                being given a target to focus on.
                 Rather, it tries to make those decisions completely on its own.
                 We use supervised learning however, where the target is well defined
                 but the algorithm makes decisions with its dataset to reach it.
-                <br />
-                <br />
+                <br/>
+                <br/>
                 Therefore, the neural network is trained with data telling it what to output.
                 Having a target to reach for guides the neural network to make decisions,
                 which are then used as new input as the process repeats.
                 This type of logic described is often referred to as
-                Bayesian logic: decision making and inferential statistics with probability inference
-                that uses knowledge of prior events to predict future events.
-                <br />
-                <br />
-                 This architecture is known for the numerous layers of processing between the initial input and desired output.
-                 Each layer contains several nodes, each of which have a correlating weight that defines their importance to other nodes in the network.
-                 With backpropagation, a technique to calculate errors while learning, the values can also adjust and learn from their predictive mistakes.
+                Bayesian logic: decision making and inferential statistics
+                with probability inference that uses knowledge of prior events
+                to predict future events.
+                <br/>
+                <br/>
+                 This architecture is known for the numerous layers of processing
+                 between the initial input and desired output.
+                 Each layer contains several nodes,
+                 each of which have a correlating weight
+                 that defines their importance to other nodes in the network.
+                 With backpropagation, a technique to calculate errors while learning,
+                 the values can also adjust and learn from their predictive mistakes.
                  This provides better accuracy.
               </p>
             </div>
               <div className="accordion-separator"></div>
           </li>
           <li>
-            <input type="radio" name="select" className="accordion-select" />
+            <input type="radio" name="select" className="accordion-select"/>
             <div className="accordion-title">
-              <span>What is WaveNet and why do we use it?</span>
+              <span>
+                What is WaveNet and why do we use it?
+              </span>
             </div>
             <div className="accordion-content">
               <p align="left">
@@ -110,12 +122,14 @@ class Learn extends Component {
                 </a>
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
           <li>
-            <input type="radio" name="select" className="accordion-select" />
+            <input type="radio" name="select" className="accordion-select"/>
             <div className="accordion-title">
-              <span>What are other alternatives to ML with music?</span>
+              <span>
+                What are other alternatives to ML with music?
+              </span>
             </div>
             <div className="accordion-content">
               <p align="left">
@@ -130,7 +144,8 @@ class Learn extends Component {
                 nor will we be the last.
                 Here are a few other organizations that are making strides
                 in the same field:
-                <br/><br/>
+                <br/>
+                <br/>
                 <a href="https://magenta.tensorflow.org"
                   target="_blank" rel="noopener noreferrer">
                   Google’s Magenta
@@ -140,7 +155,8 @@ class Learn extends Component {
                 There's a ton of pre-trained models for different genres,
                 and there's a ton of great documentation with the API
                 as well as an active community.
-                <br/><br/>
+                <br/>
+                <br/>
                 <a href="https://www.jukedeck.com/?no-redirect=true"
                   target="_blank" rel="noopener noreferrer">
                   JukeDeck
@@ -150,7 +166,8 @@ class Learn extends Component {
                 The output is extremely naturalistic,
                 with their goal being the creation of royalty free music
                 custom generated for user needs.
-                <br/><br/>
+                <br/>
+                <br/>
                 <a href="http://www.flow-machines.com"
                   target="_blank" rel="noopener noreferrer">
                   Flow Machines
@@ -162,7 +179,8 @@ class Learn extends Component {
                 The technology used is based off of Markov models,
                 which are commonly used to model statistical properties
                 of temporal sequences.
-                <br/><br/>
+                <br/>
+                <br/>
                 If you would like to learn about strategies for AI music composition
                 outside of those listed above, below are a few links
                 to pique your interest:&nbsp;
@@ -170,7 +188,8 @@ class Learn extends Component {
                   target="_blank" rel="noopener noreferrer">
                   Analyzing Deep Learning Music Tools
                 </a>
-                <a href="https://medium.com/artists-and-machine-intelligence/neural-nets-for-generating-music-f46dffac21c0"
+                <a href="https://medium.com/artists-and-machine-intelligence/
+                         neural-nets-for-generating-music-f46dffac21c0"
                   target="_blank" rel="noopener noreferrer">
                   , Neural Networks and Music
                 </a>
@@ -179,7 +198,7 @@ class Learn extends Component {
                 </a>
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
           <li>
             <input type="radio" name="select" className="accordion-select" />
@@ -196,14 +215,16 @@ class Learn extends Component {
                 However, this is also by far the largest factor in
                 determining the speed at which training takes place,
                 as each step of training analyzes this number of samples.
-                <br/>                 <br/>
+                <br/>
+                <br/>
                 Sample Rate: This is a term used in audio outside of AI generation,
                 referring to the number of “samples” per second in a given audio file.
                 Samples can be thought of as the smallest unit of data referring
                 to a soundwave. 44100 (44.1kHz) has been the standard for years,
                 however, LoFiAi uses a more “Lo-Fi” sample rate of 16000,
                 to allow for much faster AI training.
-                <br/>                 <br/>
+                <br/>
+                <br/>
                 Learning Rate: AI learn or “train” through a series of baby steps
                 toward one target set of values. This process is “Gradient Descent”
                 and is the basis of modern “Data Science”.
@@ -214,12 +235,14 @@ class Learn extends Component {
                 value as the model approaches its goal.
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
           <li>
             <input type="radio" name="select" className="accordion-select" />
             <div className="accordion-title">
-              <span>What platform is training done on?</span>
+              <span>
+                What platform is training done on?
+              </span>
             </div>
             <div className="accordion-content">
               <p align="left">
@@ -235,12 +258,14 @@ class Learn extends Component {
                 their services a look.
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
           <li>
-            <input type="radio" name="select" className="accordion-select" />
+            <input type="radio" name="select" className="accordion-select"/>
             <div className="accordion-title">
-              <span>Pitfalls discovered while training</span>
+              <span>
+                Pitfalls discovered while training
+              </span>
             </div>
             <div className="accordion-content">
               <p align="left">
@@ -253,7 +278,7 @@ class Learn extends Component {
                 limited set of music, featuring similar instrumentation and tempo.
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
           <li>
             <input type="radio" name="select" className="accordion-select" />
@@ -266,21 +291,28 @@ class Learn extends Component {
                 basics of the process.
                 <br />
                 There's very little in the way of approachable
-                resources for learning about this material, <br /> so our goal is to get all
-                kinds of people excited about the possibilities of AI in music,<br /> and
-                empower them to experiment themselves, without being intimidated
-                by the scientific specifics.<br />
-                Our project is open source, so if you would like to contribute or start training your own music click&nbsp;
+                resources for learning about this material,
+                <br/>
+                so our goal is to get all
+                kinds of people excited about the possibilities of AI in music,
+                <br/>
+                and empower them to experiment themselves, without being intimidated
+                by the scientific specifics.
+                <br/>
+                Our project is open source, so if you would like to contribute
+                or start training your own music click&nbsp;
                 <a href="https://github.com/Zagan202/LoFiAi"
                   target="_blank" rel="noopener noreferrer">
                   here
                 </a>
                 &nbsp;to find out more.
-                <br /><br />
-                <img alt="" src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg"/>
+                <br/>
+                <br/>
+                <img src="https://wybeaconnews.org/wp-content/uploads/2017/05/LoFi-475x267.jpg"
+                  alt=""/>
               </p>
             </div>
-            <div className="accordion-separator"></div>
+            <div className="accordion-separator"/>
           </li>
         </ul>
       </div>

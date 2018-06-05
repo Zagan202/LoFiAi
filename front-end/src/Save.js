@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import saveIcon from './assets/save.svg';
-import './styles.css';
 // Save button compoenent
+
+import React, { Component } from 'react';
+import './styles.css';
+import saveIcon from './assets/save.svg';
 
 class Save extends Component{
   constructor(props){
@@ -11,7 +12,6 @@ class Save extends Component{
 
   // Triggers when button is pressed
   press(){
-    //console.log(this.props.path);
     let FileSaver = require('file-saver');
     let file = new File([this.props.path], {type: "audio/mpeg"});
     // Use the filename after the last "/" in the url
@@ -19,12 +19,11 @@ class Save extends Component{
     FileSaver.saveAs(file, fileName);
   }
 
-  // Renders button which triggers press
   render(){
     return(
       <div>
-        <img alt="save" onClick={this.press} src={saveIcon}
-        height="70%" width="70%">
+        <img src={saveIcon} alt="save" onClick={this.press}
+          width="70%" height="70%">
         </img>
       </div>
     )

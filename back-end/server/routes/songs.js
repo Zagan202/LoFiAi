@@ -1,6 +1,8 @@
-var express = require("express");
+// Routing functions related to the song model
+
+var express = require('express');
 var router = express.Router();
-var Song = require("../models/songs"); // comment model
+var Song = require('../models/songs');
 
 router.route("/get/song")
   .get(function(req, res) {
@@ -9,14 +11,14 @@ router.route("/get/song")
       if (err)
         res.send(err);
 	  
-      // Set response status to 200 if successful
+    // Set response status to 200 if successful
 	  // 400 if there is an error
 	  // Sends array of all songs
       res.status(200).send(songs);
     });
   })
 
-  // adds a new song to the database 
+  // Adds a new song to the database 
   .post(function(req, res) {
     var song = new Song();
     song.path = req.body.path;

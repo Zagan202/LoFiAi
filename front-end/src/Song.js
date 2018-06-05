@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios'; // used for connection to database from front end
-import play from './assets/play.svg'
-import pause from './assets/pause.svg'
-import './styles.css';
 // Song player component
+import React, { Component } from 'react';
+// Used for connection to database from front end
+import axios from 'axios';
+import './styles.css';
+import pause from './assets/pause.svg'
+import play from './assets/play.svg'
 
 class Song extends Component {
-  // Initialize
   constructor(props){
     super(props);
     // data: array of all song paths
@@ -54,7 +54,17 @@ class Song extends Component {
         }
       })
   }
-  
+
+  // Send the current duration to App when it changes
+  duration(){
+    var playerElement = document.getElementById("player");
+    if(isNaN(playerElement.duration)){
+      this.props.lengthCallback(0);
+    }else{
+      this.props.lengthCallback(playerElement.duration);
+    }
+  }
+
   // Randomly select next song path and play it
   playNext(){
     var playerElement = document.getElementById("player");
@@ -75,16 +85,6 @@ class Song extends Component {
       this.props.timeCallback(0);
     }else{
       this.props.timeCallback(playerElement.currentTime);
-    }
-  }
-
-  // Send the current duration to App when it changes
-  duration(){
-    var playerElement = document.getElementById("player");
-    if(isNaN(playerElement.duration)){
-      this.props.lengthCallback(0);
-    }else{
-      this.props.lengthCallback(playerElement.duration);
     }
   }
 
@@ -114,12 +114,12 @@ class Song extends Component {
     if(this.state.data.length > 0){
       return (
         <div style={{display: "flex", alignItems: "center"}}>
-          <audio id="player" ref="player" onEnded={this.playNext} 
-            onTimeUpdate={this.second} onDurationChange={this.duration}>
+          <audio id="player" ref="player" onDurationChange={this.duration}
+            onEnded={this.playNext} onTimeUpdate={this.second}>
             <source src={this.state.data[this.state.first].path} type="audio/mpeg"/>
           </audio>
             <img id="pause" src={play} alt="Play/Pause" onClick={this.playButton}
-              height="20%" width="20%" style={{float: "left"}}>
+              width="20%" height="20%" style={{float: "left"}}>
             </img>
             <input id="vol" className="slider" type="range" min="0" max="100"
               defaultValue="100" onInput={this.changeVolume}>
@@ -127,7 +127,7 @@ class Song extends Component {
           </div>
       )
     }
-    return(<div></div>);
+    return(<div/>);
   }
 }
 

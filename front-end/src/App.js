@@ -1,18 +1,22 @@
+// Overall parallax layout of page
+// All other components exist as children of App
+// Used to send data between child components
+
 import React, { Component } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring';
 import './styles.css';
 import abg from './assets/abg.svg';
-import lbg from './assets/lbg.svg';
 import hey from './assets/hey.svg';
+import lbg from './assets/lbg.svg';
 import logo from './assets/logo.svg';
 import sleep from './assets/sleep.svg';
 import study from './assets/study.jpg';
 import welcome from './assets/welcome.svg';
-import Song from './Song.js';
-import Share from './Share.js';
-import Save from './Save.js';
-import Learn from './Learn.js';
 import About from './About.js';
+import Learn from './Learn.js';
+import Save from './Save.js';
+import Share from './Share.js';
+import Song from './Song.js';
 
 class App extends Component {
   constructor(props){
@@ -114,13 +118,22 @@ class App extends Component {
         {/* Navbar*/}
         <ParallaxLayer offset={0} speed={-1}>
           <div id = "nav" className = "navbar">
-            <button onClick={() => this.parallax.scrollTo(0)}>Home</button>
-            <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
-            <button onClick={() => this.parallax.scrollTo(2)}>About</button>
-            <button onClick={() => this.parallax.scrollTo(3)}>Learning With LoFi</button>
+            <button onClick={() => this.parallax.scrollTo(0)}>
+              Home
+            </button>
+            <button onClick={() => this.parallax.scrollTo(1)}>
+              Player
+            </button>
+            <button onClick={() => this.parallax.scrollTo(2)}>
+              About
+            </button>
+            <button onClick={() => this.parallax.scrollTo(3)}>
+              Learning With LoFi
+            </button>
             {/* Track info*/}
             <div className="trackName">
-              <p>Youre listening to track #{this.state.index}: "{this.songName()}"
+              <p>
+                Youre listening to track #{this.state.index}: "{this.songName()}"
                 @ {this.state.time}/{this.state.length}.
               </p>
             </div>
@@ -128,17 +141,10 @@ class App extends Component {
           </div>
         </ParallaxLayer>
 
-        {/* Share buttons*/}
-        <ParallaxLayer offset={0.2} speed={-1}
-          style={{display: "flex", alignItems: "flex-start", justifyContent: "flex-end"}}>
-
-        </ParallaxLayer>
-
         {/* About page text*/}
-
         <ParallaxLayer offset={2.1} speed={0.8}
-        style={{display: "flex", alignContent: "left", padding: "0% 0% 25% 2%"}}>
-        <About/>
+          style={{display: "flex", alignContent: "left", padding: "0% 0% 25% 2%"}}>
+          <About/>
         </ParallaxLayer>
 
         {/* Learning with LoFi*/}

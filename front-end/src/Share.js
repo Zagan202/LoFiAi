@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import twIcon from './assets/twIcon.svg';
-import fbIcon from './assets/fbIcon.svg';
-import cbIcon from './assets/clipboard.svg';
-import './styles.css';
 // Share button(s) Component
+
+import React, { Component } from 'react';
+import './styles.css';
+import cbIcon from './assets/clipboard.svg';
+import fbIcon from './assets/fbIcon.svg';
+import twIcon from './assets/twIcon.svg';
 
 class Share extends Component{
   constructor(props){
@@ -27,6 +28,15 @@ class Share extends Component{
   open(link){
     var win = window.open(link);
     win.focus();
+  }
+
+  notice(){
+    console.log(this.state.visible)
+    if(this.state.visible === true){
+      return("Link Copied To Clipboard");
+    }else{
+      return("");
+    }
   }
 
   // Creates a textbox with the link and copies it to the clipboard
@@ -62,32 +72,23 @@ class Share extends Component{
     this.open(link);
   }
 
-  notice(){
-    console.log(this.state.visible)
-    if(this.state.visible === true){
-      return("Link Copied To Clipboard");
-    }else{
-      return("");
-    }
-  }
-
   // Renders share buttons
   render(){
     return(
       <div style={{display: "block", padding: ".8%1%.8%1%"}}>
         <div>
-        <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
+        <img src={cbIcon} alt="clipboard" onClick={this.copyLink}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".05%.5%.25%.5%"}}>
           </img>
         </div>
         <div id="linkdiv" style={{visibility: "visible"}}/>
         <div>
-          <img alt="facebook" onClick={this.face} src={fbIcon}
+          <img src={fbIcon} alt="facebook" onClick={this.face}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
-          <img alt="twitter" onClick={this.tweet} src={twIcon}
+          <img src={twIcon} alt="twitter" onClick={this.tweet}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
         </div>
@@ -99,7 +100,7 @@ class Share extends Component{
           </p>
         </div>
       </div>
-    )
+    );
   }
 }
 

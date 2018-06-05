@@ -1,26 +1,170 @@
 /* Master CSS file */
 
+/* Unused logo rotation*/
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Main font*/
+@font-face {
+  font-family: p5hatty;
+  src: url('./assets/p5hatty.ttf') format('truetype');
+}
+
+/* Learning with LoFi page*/
+.accordion {
+  border-color: #505050;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 5px;
+  width: 1130px;
+  height: 500px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  
+.accordion > ul > li,
+.accordion-title,
+.accordion-content,
+.accordion-separator{
+  float: left;
+}
+
+.accordion > ul > li {
+  background-color: #1f1f1f;
+  margin-right: -730px;
+  margin-bottom: -0px;
+}
+  
+.accordion-select:checked ~ .accordion-separator{
+  margin-right: 730px;
+  margin-bottom: 0px;
+}
+  
+.accordion-title,
+.accordion-select{
+  font-family: p5hatty;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  width: 50px;
+  height: 500px;
+  font-size: 25px;
+}
+  
+.accordion-title span {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+  
+.accordion-select:hover ~ .accordion-title,
+.accordion-select:checked ~ .accordion-title{
+  background-color: #53a66a;
+}
+
+.accordion-title span  {
+  transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-writing-mode: lr-bt;
+  writing-mode: lr-bt;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  margin-left: 0px;
+  line-height: 50px;
+}
+  
+.accordion-content {
+  width: 672px;
+  height: 500px;
+  background-color: #000000;
+  padding: 29px;
+  color: #f5f2f0;
+}
+  
+.accordion-content1 {
+  width: 672px;
+  height: 442px;
+  background-color: 'red';
+  padding: 29px;
+  color: #f5f2f0;
+}
+
+.accordion-title,
+.accordion-select:checked ~ .accordion-content {
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+  
+/* Do not change following properties, they aren't
+   generated automatically and are common for each slider. */
+.accordion {
+  overflow: hidden;
+}
+  
+.accordion > ul {
+  width: 101%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  
+.accordion > ul > li,
+.accordion-title {
+  position: relative;
+}
+  
+.accordion-select {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+  
+.accordion-title span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  white-space: nowrap;
+}
+  
+.accordion-content {
+  position: relative;
+  overflow: auto;
+}
+  
+.accordion-separator {
+  transition: margin 0.3s ease 0.1s;
+  -o-transition: margin 0.3s ease 0.1s;
+  -moz-transition: margin 0.3s ease 0.1s;
+  -webkit-transition: margin 0.3s ease 0.1s;
+}
+  a {
+  text-decoration: none;
+}
+  a:link, a:visited {
+  color: #53a66a;
+}
+  a:hover {
+  color: #FF9B23;
+}
+
+/* Entire page*/
 .App {
   text-align: center;
 }
 
 /*LoFiAi logo*/
 .App-logo {
-  padding: 25%;
   display: block;
+  width: 10%;
   margin-left: auto;
   margin-right: auto;
-  width: 10%;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@font-face {
-  font-family: p5hatty;
-  src: url('./assets/p5hatty.ttf') format('truetype');
+  padding: 25%;
 }
 
 /* About page text*/
@@ -34,8 +178,8 @@
 
 /* Body*/
 body {
-  margin: 0;
   background-color: #000000;
+  margin: 0;
 }
 
 /* Used to create line breaks in <p> elements in a parallax layer*/
@@ -57,38 +201,38 @@ body {
 
 /* Navbar links */
 .navbar button {
-  float: left;
   display: block;
+  float: left;
   border: none;
   background-color: #333;
-  color: #efefef;
-  text-align: center;
   padding: 14px 16px;
   font-size: 19px;
   font-family: p5hatty;
+  color: #efefef;
+  text-align: center;
 }
 
 /* Copied link to clipboard notice*/
 .notice{
+  float: "left";
   background-color: #333;
-  color: #efefef;
   font-family: "p5hatty";
   font-size: 19px;
-  float: "left";
+  color: #efefef;
   position: absolute;
-  right: 0%;
   top: 6%;
+  right: 0%;
 }
 
 /* Used for the volume slider*/
 .slider {
   -webkit-appearance: none;
   appearance: none;
+  border-radius: 5px;
+  outline: none;
   width: 100%;
   height: 5px;
-  border-radius: 5px;
   background: #efefef;
-  outline: none;
 }
 
 /* Knob on volume slider*/
@@ -105,150 +249,11 @@ body {
 
 /* Track name and timer display in navbar*/
 .trackName{
-  color: #efefef;
-  font-family: "p5hatty";
-  font-size: 19px;
   float: "left";
+  font-size: 19px;
+  font-family: "p5hatty";
+  color: #efefef;
   position: absolute;
-  right: 13%;
   top: -.8%;
-}
-
-/* Learning with LoFi page*/
-.accordion {
-    font-family: Arial, Helvetica, sans-serif;
-    border-color: #505050;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 5px;
-    margin: 0 auto;
-    height: 500px;
-    width: 1130px;
-}
-
-.accordion > ul > li,
-.accordion-title,
-.accordion-content,
-.accordion-separator {
-    float: left;
-}
-
-.accordion > ul > li {
-    background-color: #1f1f1f;
-    margin-right: -730px;
-    margin-bottom: -0px;
-}
-
-.accordion-select:checked ~ .accordion-separator {
-    margin-right: 730px;
-    margin-bottom: 0px;
-}
-
-.accordion-title,
-.accordion-select  {
-    font-family: p5hatty;
-    background-color: #2d2d2d;
-    color: #ffffff;
-    width: 50px;
-    height: 500px;
-    font-size: 25px;
-}
-
-.accordion-title span {
-    margin-bottom: 25px;
-    margin-left: 25px;
-}
-
-.accordion-select:hover ~ .accordion-title,
-.accordion-select:checked ~ .accordion-title {
-    background-color: #53a66a;
-}
-
-.accordion-title span  {
-    transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -ms-writing-mode: lr-bt;
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    margin-left: 0px;
-    line-height: 50px;
-}
-
-.accordion-content {
-    background-color: #000000;
-    color: #f5f2f0;
-    height: 500px;
-    width: 672px;
-    padding: 29px;
-}
-
-.accordion-content1 {
-    background-color: 'red';
-    color: #f5f2f0;
-    height: 442px;
-    width: 672px;
-    padding: 29px;
-}
-.accordion-title,
-.accordion-select:checked ~ .accordion-content {
-    margin-right: 0px;
-    margin-bottom: 0px;
-}
-
-/* Do not change following properties, they aren't
-generated automatically and are common for each slider. */
-.accordion {
-    overflow: hidden;
-}
-
-.accordion > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 101%;
-}
-
-.accordion > ul > li,
-.accordion-title {
-    position: relative;
-}
-
-.accordion-select {
-    cursor: pointer;
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    margin: 0;
-    z-index: 1;
-}
-
-.accordion-title span {
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    white-space: nowrap;
-}
-
-.accordion-content {
-    position: relative;
-    overflow: auto;
-}
-
-.accordion-separator {
-    transition: margin 0.3s ease 0.1s;
-    -o-transition: margin 0.3s ease 0.1s;
-    -moz-transition: margin 0.3s ease 0.1s;
-    -webkit-transition: margin 0.3s ease 0.1s;
-}
-a {
-    text-decoration: none;
-}
-a:link, a:visited {
-    color: #53a66a;
-}
-a:hover {
-    color: #FF9B23;
+  right: 13%;
 }
