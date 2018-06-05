@@ -68,6 +68,18 @@ body {
   font-family: p5hatty;
 }
 
+/* Copied link to clipboard notice*/
+.notice{
+  background-color: #333;
+  color: #efefef;
+  font-family: "p5hatty";
+  font-size: 19px;
+  float: "left";
+  position: absolute;
+  right: 0%;
+  top: 6%;
+}
+
 /* Used for the volume slider*/
 .slider {
   -webkit-appearance: none;

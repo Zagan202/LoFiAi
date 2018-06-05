@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import saveIcon from './assets/save.svg'
+import saveIcon from './assets/save.svg';
 import './styles.css';
 // Save button compoenent
 

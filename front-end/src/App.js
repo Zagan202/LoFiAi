@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring';
 import './styles.css';
@@ -14,6 +13,7 @@ import Share from './Share.js';
 import Save from './Save.js';
 import Learn from './Learn.js';
 import About from './About.js';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -118,9 +118,9 @@ class App extends Component {
             <button onClick={() => this.parallax.scrollTo(1)}>Player</button>
             <button onClick={() => this.parallax.scrollTo(2)}>About</button>
             <button onClick={() => this.parallax.scrollTo(3)}>Learning With LoFi</button>
-            {/*track info*/}
+            {/* Track info*/}
             <div className="trackName">
-              <p>You're listening to track #{this.state.index}: "{this.songName()}"
+              <p>Youre listening to track #{this.state.index}: "{this.songName()}"
                 @ {this.state.time}/{this.state.length}.
               </p>
             </div>
