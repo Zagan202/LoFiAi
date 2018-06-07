@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import twIcon from "./assets/twIcon.svg";
-import fbIcon from "./assets/fbIcon.svg";
-import cbIcon from "./assets/clipboard.svg"
-import './styles.css';
 // Share button(s) Component
+
+import React, { Component } from 'react';
+import './styles.css';
+import cbIcon from './assets/clipboard.svg';
+import fbIcon from './assets/fbIcon.svg';
+import twIcon from './assets/twIcon.svg';
 
 class Share extends Component{
   constructor(props){
     super(props);
+    this.state = {visible: false};
     this.getShareLink = this.getShareLink.bind(this);
     this.copyLink = this.copyLink.bind(this);
     this.tweet = this.tweet.bind(this);
@@ -28,6 +30,15 @@ class Share extends Component{
     win.focus();
   }
 
+  notice(){
+    console.log(this.state.visible)
+    if(this.state.visible === true){
+      return("Link Copied To Clipboard");
+    }else{
+      return("");
+    }
+  }
+
   // Creates a textbox with the link and copies it to the clipboard
   copyLink(){
     var link = this.getShareLink();
@@ -39,6 +50,9 @@ class Share extends Component{
     input.select();
     document.execCommand("Copy");
     element.removeChild(input);
+    // Now for the notice
+    this.setState({visible: true});
+    setTimeout( function() {this.setState({visible: false});}.bind(this), 1000);
   }
 
   // Opens a tweet sharing our website
@@ -55,9 +69,6 @@ class Share extends Component{
     var link = this.getShareLink();
     // Format as a facebook link
     link = ("https://www.facebook.com/sharer/sharer.php?u=" + link);
-    // This currently will give an error,
-    //  from what I've deduced, this is because facebook doesn't share links
-    //  to local host. It should be fixed when we are hosted properly
     this.open(link);
   }
 
@@ -66,24 +77,30 @@ class Share extends Component{
     return(
       <div style={{display: "block", padding: ".8%1%.8%1%"}}>
         <div>
-        <img alt="clipboard" onClick={this.copyLink} src={cbIcon}
+        <img src={cbIcon} alt="clipboard" onClick={this.copyLink}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".05%.5%.25%.5%"}}>
           </img>
         </div>
+        <div id="linkdiv" style={{visibility: "visible"}}/>
         <div>
-          <img alt="facebook" onClick={this.face} src={fbIcon}
+          <img src={fbIcon} alt="facebook" onClick={this.face}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
         </div>
         <div>
-
-          <img alt="twitter" onClick={this.tweet} src={twIcon}
+          <img src={twIcon} alt="twitter" onClick={this.tweet}
             height="1.5%" width="1.5%" style={{float: "right", padding: ".25%.5%.25%.5%"}}>
           </img>
-          <div id="linkdiv" style={{visibility: "visible"}}></div>
+        </div>
+        <div>
+          <p>
+            <span id="notice" className="notice">
+             {this.notice()}
+            </span>
+          </p>
         </div>
       </div>
-    )
+    );
   }
 }
 

@@ -1,3 +1,5 @@
+// About page component
+
 import React, { Component } from 'react';
 import './styles.css';
 
@@ -5,11 +7,16 @@ class About extends Component {
 
   render(){
     return(
-      <div className = "about" align="left" >
-        <p>LoFiAi (loe-fy-ay-eye) is a platform for curious listeners<br/>
-          to hear music composed by artificial intelligence.<br/>
-          Inspired by advancements made with Deep Learning and love of music,<br/>
-          the Neural Network learns and generates its interpretation of the <br/>
+      <div className = "about" align="left">
+        <p>
+          LoFiAi (loe-fy-ay-eye) is a platform for curious listeners
+          <br/>
+          to hear music composed by artificial intelligence.
+          <br/>
+          Inspired by advancements made with Deep Learning and love of music,
+          <br/>
+          the Neural Network learns and generates its interpretation of the
+          <br/>
           given music. 
           <br/>
           <br/>

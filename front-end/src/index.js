@@ -1,3 +1,5 @@
+// Outermost react layer that renders App
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
